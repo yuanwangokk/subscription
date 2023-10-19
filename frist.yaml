@@ -81,55 +81,87 @@ dns:
 
 
 proxies:
-  - {name: 🇺🇸 US, server: tokyo.mfa.ee, port: 80, client-fingerprint: randomized, type: vless, uuid: e4fb9c05-c92c-4094-9066-c859baa74cfb, tls: false, tfo: false, servername: pres.sg871013613.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: pres.sg871013613.workers.dev}}, udp: true}
-  - {name: 🇺🇸 US 2, server: tokyo.mfa.ee, port: 80, client-fingerprint: randomized, type: vless, uuid: e4fb9c05-c92c-4094-9066-c859baa74cfb, tls: false, tfo: false, servername: shadowsocks.miui871013613.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: shadowsocks.miui871013613.workers.dev}}, udp: true}
-  - {name: 🇺🇸 US 3, server: tokyo.mfa.ee, port: 80, client-fingerprint: randomized, type: vless, uuid: e4fb9c05-c92c-4094-9066-c859baa74cfb, tls: false, tfo: false, servername: arise.yuanwangokk.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: arise.yuanwangokk.workers.dev}}, udp: true}
-  - {name: 🇺🇸 US 4, server: tokyo.mfa.ee, port: 80, client-fingerprint: randomized, type: vless, uuid: e4fb9c05-c92c-4094-9066-c859baa74cfb, tls: false, tfo: false, servername: sub.yuanwangokk-b7c.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: sub.yuanwangokk-b7c.workers.dev}}, udp: true}
-  - {name: 🇺🇸 US 5, server: tokyo.mfa.ee, port: 8080, client-fingerprint: randomized, type: vless, uuid: e4fb9c05-c92c-4094-9066-c859baa74cfb, tls: false, tfo: false, servername: pres.sg871013613.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: pres.sg871013613.workers.dev}}, udp: true}
-  - {name: 🇺🇸 US 6, server: tokyo.mfa.ee, port: 8080, client-fingerprint: randomized, type: vless, uuid: e4fb9c05-c92c-4094-9066-c859baa74cfb, tls: false, tfo: false, servername: shadowsocks.miui871013613.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: shadowsocks.miui871013613.workers.dev}}, udp: true}
-  - {name: 🇺🇸 US 7, server: tokyo.mfa.ee, port: 8080, client-fingerprint: randomized, type: vless, uuid: e4fb9c05-c92c-4094-9066-c859baa74cfb, tls: false, tfo: false, servername: arise.yuanwangokk.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: arise.yuanwangokk.workers.dev}}, udp: true}
-  - {name: 🇺🇸 US 8, server: tokyo.mfa.ee, port: 8080, client-fingerprint: randomized, type: vless, uuid: e4fb9c05-c92c-4094-9066-c859baa74cfb, tls: false, tfo: false, servername: sub.yuanwangokk-b7c.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: sub.yuanwangokk-b7c.workers.dev}}, udp: true}
+  - {name: US 1, server: tokyo.mfa.ee, port: 80, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: pres.sg871013613.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: pres.sg871013613.workers.dev}}, udp: true}
+  - {name: US 2, server: tokyo.mfa.ee, port: 80, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: shadowsocks.miui871013613.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: shadowsocks.miui871013613.workers.dev}}, udp: true}
+  - {name: US 3, server: tokyo.mfa.ee, port: 80, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: arise.yuanwangokk.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: arise.yuanwangokk.workers.dev}}, udp: true}
+  - {name: US 4, server: tokyo.mfa.ee, port: 80, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: sub.yuanwangokk-b7c.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: sub.yuanwangokk-b7c.workers.dev}}, udp: true}
+  - {name: US 5, server: tokyo.mfa.ee, port: 8080, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: pres.sg871013613.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: pres.sg871013613.workers.dev}}, udp: true}
+  - {name: US 6, server: tokyo.mfa.ee, port: 8080, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: shadowsocks.miui871013613.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: shadowsocks.miui871013613.workers.dev}}, udp: true}
+  - {name: US 7, server: tokyo.mfa.ee, port: 8080, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: arise.yuanwangokk.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: arise.yuanwangokk.workers.dev}}, udp: true}
+  - {name: US 8, server: tokyo.mfa.ee, port: 8080, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: sub.yuanwangokk-b7c.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: sub.yuanwangokk-b7c.workers.dev}}, udp: true}
+  - {name: US 9, server: tokyo.mfa.ee, port: 2052, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: pres.sg871013613.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: pres.sg871013613.workers.dev}}, udp: true}
+  - {name: US 10, server: tokyo.mfa.ee, port: 2052, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: shadowsocks.miui871013613.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: shadowsocks.miui871013613.workers.dev}}, udp: true}
+  - {name: US 11, server: tokyo.mfa.ee, port: 2052, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: arise.yuanwangokk.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: arise.yuanwangokk.workers.dev}}, udp: true}
+  - {name: US 12, server: tokyo.mfa.ee, port: 2052, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: sub.yuanwangokk-b7c.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: sub.yuanwangokk-b7c.workers.dev}}, udp: true}
+  - {name: US 13, server: tokyo.mfa.ee, port: 2086, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: pres.sg871013613.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: pres.sg871013613.workers.dev}}, udp: true}
+  - {name: US 14, server: tokyo.mfa.ee, port: 2086, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: shadowsocks.miui871013613.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: shadowsocks.miui871013613.workers.dev}}, udp: true}
+  - {name: US 15, server: tokyo.mfa.ee, port: 2086, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: arise.yuanwangokk.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/ws?ed=2048", headers: {Host: arise.yuanwangokk.workers.dev}}, udp: true}
+  - {name: US 16, server: tokyo.mfa.ee, port: 2086, client-fingerprint: chrome, type: vless, uuid: 8e1adfe1-d142-4133-9470-86986dda7d34, tls: false, tfo: false, servername: sub.yuanwangokk-b7c.workers.dev, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: sub.yuanwangokk-b7c.workers.dev}}, udp: true}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 🇺🇸 US
-      - 🇺🇸 US 2
-      - 🇺🇸 US 3
-      - 🇺🇸 US 4
-      - 🇺🇸 US 5
-      - 🇺🇸 US 6
-      - 🇺🇸 US 7
-      - 🇺🇸 US 8
+      - US 1
+      - US 2
+      - US 3
+      - US 4
+      - US 5
+      - US 6
+      - US 7
+      - US 8
+      - US 9
+      - US 10
+      - US 11
+      - US 12
+      - US 13
+      - US 14
+      - US 15
+      - US 16
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 🇺🇸 US
-      - 🇺🇸 US 2
-      - 🇺🇸 US 3
-      - 🇺🇸 US 4
-      - 🇺🇸 US 5
-      - 🇺🇸 US 6
-      - 🇺🇸 US 7
-      - 🇺🇸 US 8
+      - US 1
+      - US 2
+      - US 3
+      - US 4
+      - US 5
+      - US 6
+      - US 7
+      - US 8
+      - US 9
+      - US 10
+      - US 11
+      - US 12
+      - US 13
+      - US 14
+      - US 15
+      - US 16
   - name: 🎥 NETFLIX
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 🇺🇸 US
-      - 🇺🇸 US 2
-      - 🇺🇸 US 3
-      - 🇺🇸 US 4
-      - 🇺🇸 US 5
-      - 🇺🇸 US 6
-      - 🇺🇸 US 7
-      - 🇺🇸 US 8
+      - US 1
+      - US 2
+      - US 3
+      - US 4
+      - US 5
+      - US 6
+      - US 7
+      - US 8
+      - US 9
+      - US 10
+      - US 11
+      - US 12
+      - US 13
+      - US 14
+      - US 15
+      - US 16
   - name: ⛔️ 广告拦截
     type: select
     proxies:
@@ -148,14 +180,22 @@ proxy-groups:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 🇺🇸 US
-      - 🇺🇸 US 2
-      - 🇺🇸 US 3
-      - 🇺🇸 US 4
-      - 🇺🇸 US 5
-      - 🇺🇸 US 6
-      - 🇺🇸 US 7
-      - 🇺🇸 US 8
+      - US 1
+      - US 2
+      - US 3
+      - US 4
+      - US 5
+      - US 6
+      - US 7
+      - US 8
+      - US 9
+      - US 10
+      - US 11
+      - US 12
+      - US 13
+      - US 14
+      - US 15
+      - US 16
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -166,41 +206,65 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
-      - 🇺🇸 US
-      - 🇺🇸 US 2
-      - 🇺🇸 US 3
-      - 🇺🇸 US 4
-      - 🇺🇸 US 5
-      - 🇺🇸 US 6
-      - 🇺🇸 US 7
-      - 🇺🇸 US 8
+      - US 1
+      - US 2
+      - US 3
+      - US 4
+      - US 5
+      - US 6
+      - US 7
+      - US 8
+      - US 9
+      - US 10
+      - US 11
+      - US 12
+      - US 13
+      - US 14
+      - US 15
+      - US 16
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
-      - 🇺🇸 US
-      - 🇺🇸 US 2
-      - 🇺🇸 US 3
-      - 🇺🇸 US 4
-      - 🇺🇸 US 5
-      - 🇺🇸 US 6
-      - 🇺🇸 US 7
-      - 🇺🇸 US 8
+      - US 1
+      - US 2
+      - US 3
+      - US 4
+      - US 5
+      - US 6
+      - US 7
+      - US 8
+      - US 9
+      - US 10
+      - US 11
+      - US 12
+      - US 13
+      - US 14
+      - US 15
+      - US 16
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 🇺🇸 US
-      - 🇺🇸 US 2
-      - 🇺🇸 US 3
-      - 🇺🇸 US 4
-      - 🇺🇸 US 5
-      - 🇺🇸 US 6
-      - 🇺🇸 US 7
-      - 🇺🇸 US 8
+      - US 1
+      - US 2
+      - US 3
+      - US 4
+      - US 5
+      - US 6
+      - US 7
+      - US 8
+      - US 9
+      - US 10
+      - US 11
+      - US 12
+      - US 13
+      - US 14
+      - US 15
+      - US 16
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -216,14 +280,22 @@ proxy-groups:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 🇺🇸 US
-      - 🇺🇸 US 2
-      - 🇺🇸 US 3
-      - 🇺🇸 US 4
-      - 🇺🇸 US 5
-      - 🇺🇸 US 6
-      - 🇺🇸 US 7
-      - 🇺🇸 US 8
+      - US 1
+      - US 2
+      - US 3
+      - US 4
+      - US 5
+      - US 6
+      - US 7
+      - US 8
+      - US 9
+      - US 10
+      - US 11
+      - US 12
+      - US 13
+      - US 14
+      - US 15
+      - US 16
 rules:
   - DOMAIN-SUFFIX,local,🎯 全球直连
   - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
