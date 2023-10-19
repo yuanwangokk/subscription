@@ -14,4 +14,4 @@ https://ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/frist.
 
 https://ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/sub
 
-##https://agit.ai/blue/youlingkaishi/
+aHR0cHM6Ly9hZ2l0LmFpL2JsdWUveW91bGluZ2thaXNoaS8=
