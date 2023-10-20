@@ -1,7 +1,5 @@
 # subscription
 
-订阅链接
-
 订阅转换链接：https://psub.yuanwangokk-b7c.workers.dev/
 
 前端订阅面板：https://sub-web.netlify.app/
