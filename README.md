@@ -18,6 +18,8 @@ https://ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/frist.
 
 https://ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/sub.yaml
 
+https://ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/warp.yaml
+
 =====================================================
 
 aHR0cHM6Ly9hZ2l0LmFpL2JsdWUveW91bGluZ2thaXNoaS8=
