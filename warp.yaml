@@ -8,7 +8,7 @@ clash-for-android:
 hosts:
   mtalk.google.com: 108.177.125.188
 dns:
-  enable: true
+  enable: false
   listen: 127.0.0.1:5335
   use-hosts: true
   default-nameserver: [223.5.5.5, 119.29.29.29]
