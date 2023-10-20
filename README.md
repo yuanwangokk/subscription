@@ -8,8 +8,6 @@
 
 cloudflare邮箱：yuanwangokk@proton.me
 
-订阅文件链接：
-
 =====================================================
                                                                                     
 订阅链接    https://ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/frist.yaml
