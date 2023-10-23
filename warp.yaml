@@ -1,10 +1,8 @@
 mixed-port: 7890
-allow-lan: false
+allow-lan: true
 mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
-clash-for-android:
-    append-system-dns: true
 proxies:
   - {name: "☁️ CFWarp-A",type: wireguard,server: 162.159.192.100,port: 4198,ip: 172.16.0.2,private-key: OGBzduaX1WHJdZmSxP2h7uIMi5MOcQcZg6reyUkP3lY=,public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,remote-dns-resolve: false,udp: true}
   - {name: "☁️ CFWarp-B",type: wireguard,server: 162.159.192.100,port: 7281,ip: 172.16.0.2,private-key: OGBzduaX1WHJdZmSxP2h7uIMi5MOcQcZg6reyUkP3lY=,public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,remote-dns-resolve: false,udp: true}
