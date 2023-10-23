@@ -4,91 +4,19 @@ allow-lan: true
 mode: Rule
 log-level: info
 external-controller: :9090
-dns:
-  enabled: true
-  listen: 0.0.0.0:1053
-  ipv6: true
-  default-nameserver:
-    - 223.5.5.5
-    - 114.114.114.114
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter:
-    - '*.lan'
-    - '*.linksys.com'
-    - '*.linksyssmartwifi.com'
-    - swscan.apple.com
-    - mesu.apple.com
-    - '*.msftconnecttest.com'
-    - '*.msftncsi.com'
-    - time.*.com
-    - time.*.gov
-    - time.*.edu.cn
-    - time.*.apple.com
-    - time1.*.com
-    - time2.*.com
-    - time3.*.com
-    - time4.*.com
-    - time5.*.com
-    - time6.*.com
-    - time7.*.com
-    - ntp.*.com
-    - ntp.*.com
-    - ntp1.*.com
-    - ntp2.*.com
-    - ntp3.*.com
-    - ntp4.*.com
-    - ntp5.*.com
-    - ntp6.*.com
-    - ntp7.*.com
-    - '*.time.edu.cn'
-    - '*.ntp.org.cn'
-    - +.pool.ntp.org
-    - time1.cloud.tencent.com
-    - +.music.163.com
-    - '*.126.net'
-    - musicapi.taihe.com
-    - music.taihe.com
-    - songsearch.kugou.com
-    - trackercdn.kugou.com
-    - '*.kuwo.cn'
-    - api-jooxtt.sanook.com
-    - api.joox.com
-    - joox.com
-    - +.y.qq.com
-    - +.music.tc.qq.com
-    - aqqmusic.tc.qq.com
-    - +.stream.qqmusic.qq.com
-    - '*.xiami.com'
-    - +.music.migu.cn
-    - +.srv.nintendo.net
-    - +.stun.playstation.net
-    - xbox.*.microsoft.com
-    - +.xboxlive.com
-    - localhost.ptlogin2.qq.com
-    - proxy.golang.org
-    - stun.*.*
-    - stun.*.*.*
-    - '*.mcdn.bilivideo.cn'
-  nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-  fallback-filter:
-    geoip: false
-    ipcidr:
-      - 240.0.0.0/4
-      - 0.0.0.0/32
 proxies:
-  - {name: arise, server: shopify.com, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
-  - {name: arise 2, server: shopify.com, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
-  - {name: arise 3, server: ip.skk.moe, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
-  - {name: arise 4, server: ip.skk.moe, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
-  - {name: arise 5, server: shopify.com, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
-  - {name: arise 6, server: shopify.com, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
-  - {name: arise 7, server: ip.skk.moe, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
-  - {name: arise 8, server: ip.skk.moe, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
-  - {name: arise 9, server: shopify.com, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
-  - {name: arise 10, server: shopify.com, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
+  - {name: arise, server: tokyo.mfa.ee, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
+  - {name: arise 2, server: icook.tw, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
+  - {name: arise 3, server: tokyo.mfa.ee, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: aries.ss-v2ray.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: aries.ss-v2ray.workers.dev}}, udp: false}
+  - {name: arise 4, server: icook.tw, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: aries.ss-v2ray.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: aries.ss-v2ray.workers.dev}}, udp: false}
+  - {name: arise 5, server: tokyo.mfa.ee, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: sub.yuanwangokk-b7c.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: sub.yuanwangokk-b7c.workers.dev}}, udp: false}
+  - {name: arise 6, server: icook.tw, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: sub.yuanwangokk-b7c.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: sub.yuanwangokk-b7c.workers.dev}}, udp: false}
+  - {name: arise 7, server: tokyo.mfa.ee, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: aries.mm871013613.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: aries.mm871013613.workers.dev}}, udp: false}
+  - {name: arise 8, server: icook.tw, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: aries.mm871013613.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: aries.mm871013613.workers.dev}}, udp: false}
+  - {name: arise 9, server: tokyo.mfa.ee, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: pres.sg871013613.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: pres.sg871013613.workers.dev}}, udp: false}
+  - {name: arise 10, server: icook.tw, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: pres.sg871013613.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: pres.sg871013613.workers.dev}}, udp: false}
+  - {name: arise 11, server: tokyo.mfa.ee, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: shadowsocks.miui871013613.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: shadowsocks.miui871013613.workers.dev}}, udp: false}
+  - {name: arise 12, server: icook.tw, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: shadowsocks.miui871013613.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: shadowsocks.miui871013613.workers.dev}}, udp: false}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -105,6 +33,8 @@ proxy-groups:
       - arise 8
       - arise 9
       - arise 10
+      - arise 11
+      - arise 12
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -121,6 +51,8 @@ proxy-groups:
       - arise 8
       - arise 9
       - arise 10
+      - arise 11
+      - arise 12
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -137,6 +69,8 @@ proxy-groups:
       - arise 8
       - arise 9
       - arise 10
+      - arise 11
+      - arise 12
   - name: 📲 电报信息
     type: select
     proxies:
@@ -152,6 +86,8 @@ proxy-groups:
       - arise 8
       - arise 9
       - arise 10
+      - arise 11
+      - arise 12
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
@@ -167,6 +103,8 @@ proxy-groups:
       - arise 8
       - arise 9
       - arise 10
+      - arise 11
+      - arise 12
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -182,6 +120,8 @@ proxy-groups:
       - arise 8
       - arise 9
       - arise 10
+      - arise 11
+      - arise 12
   - name: 📢 谷歌FCM
     type: select
     proxies:
@@ -198,6 +138,8 @@ proxy-groups:
       - arise 8
       - arise 9
       - arise 10
+      - arise 11
+      - arise 12
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -230,6 +172,8 @@ proxy-groups:
       - arise 8
       - arise 9
       - arise 10
+      - arise 11
+      - arise 12
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
@@ -3016,6 +2960,18 @@ rules:
   - DOMAIN-SUFFIX,hwccpc.com,🎯 全球直连
   - DOMAIN-SUFFIX,vmall.com,🎯 全球直连
   - DOMAIN-SUFFIX,vmallres.com,🎯 全球直连
+  - DOMAIN-SUFFIX,allawnfs.com,🎯 全球直连
+  - DOMAIN-SUFFIX,allawno.com,🎯 全球直连
+  - DOMAIN-SUFFIX,allawntech.com,🎯 全球直连
+  - DOMAIN-SUFFIX,coloros.com,🎯 全球直连
+  - DOMAIN-SUFFIX,heytap.com,🎯 全球直连
+  - DOMAIN-SUFFIX,heytapcs.com,🎯 全球直连
+  - DOMAIN-SUFFIX,heytapdownload.com,🎯 全球直连
+  - DOMAIN-SUFFIX,heytapimage.com,🎯 全球直连
+  - DOMAIN-SUFFIX,heytapmobi.com,🎯 全球直连
+  - DOMAIN-SUFFIX,oppo.com,🎯 全球直连
+  - DOMAIN-SUFFIX,oppoer.me,🎯 全球直连
+  - DOMAIN-SUFFIX,oppomobile.com,🎯 全球直连
   - DOMAIN-SUFFIX,iflyink.com,🎯 全球直连
   - DOMAIN-SUFFIX,iflyrec.com,🎯 全球直连
   - DOMAIN-SUFFIX,iflytek.com,🎯 全球直连
@@ -3330,7 +3286,6 @@ rules:
   - DOMAIN-SUFFIX,onedns.net,🎯 全球直连
   - DOMAIN-SUFFIX,oneplus.com,🎯 全球直连
   - DOMAIN-SUFFIX,onlinedown.net,🎯 全球直连
-  - DOMAIN-SUFFIX,oppo.com,🎯 全球直连
   - DOMAIN-SUFFIX,oracle.com,🎯 全球直连
   - DOMAIN-SUFFIX,oschina.net,🎯 全球直连
   - DOMAIN-SUFFIX,ourdvs.com,🎯 全球直连
