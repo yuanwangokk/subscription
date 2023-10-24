@@ -43,7 +43,7 @@ proxies:
   - {name: "☁️ CFWarp-X",type: wireguard,server: 162.159.192.107,port: 7281,ip: 172.16.0.2,private-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,remote-dns-resolve: false,udp: true} 
   - {name: "☁️ CFWarp-Y",type: wireguard,server: 162.159.192.100,port: 4198,ip: 172.16.0.2,private-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,remote-dns-resolve: false,udp: true}
   - {name: "☁️ CFWarp-Z",type: wireguard,server: 162.159.192.100,port: 7281,ip: 172.16.0.2,private-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,remote-dns-resolve: false,udp: true}
-  proxy-groups:
+proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
