@@ -21,6 +21,10 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - '*.lan'
+nameserver-policy:
+    'www.baidu.com': '114.114.114.114'
+    '+.google.com': '8.8.8.8'
+    'geosite:cn': https://doh.pub/dns-query    
   fallback:
     - tls://8.8.8.8
     - tls://1.1.1.1
@@ -43,6 +47,7 @@ dns:
       - '+.google.com'
       - '+.facebook.com'
       - '+.youtube.com'
+
 
 proxies:
 - name: warp-wireguard                                          # 可以自定义节点名称
