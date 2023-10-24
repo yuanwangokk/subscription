@@ -10,7 +10,6 @@ external-controller: :9090
 dns:
   enable: true
   prefer-h3: true
-  listen: 0.0.0.0:53
   ipv6: true
   default-nameserver:
     - 223.5.5.5
