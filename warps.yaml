@@ -20,6 +20,11 @@ dns:
   fake-ip-filter:
     - '*.lan'
     - localhost.ptlogin2.qq.com
+    - '*.baidu.com'
+    - '*.bilibili.com'
+    - '*.aiqiyi.com'
+    - '*.hao123.com' 
+    - '*.qq.com'    
   nameserver-policy:
     '*.baidu.com': '114.114.114.114'
     '*.google.com': '8.8.8.8'
