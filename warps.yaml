@@ -37,6 +37,8 @@ dns:
     - tls://1.1.1.1
   proxy-server-nameserver:
     - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://dns.google/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
