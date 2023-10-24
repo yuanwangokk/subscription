@@ -1,9 +1,160 @@
-port: 7890
-allow-lan: true
-mode: rule
-log-level: info
-unified-delay: true
-global-client-fingerprint: chrome
+mixed-port: 7890 # 局域网访问Port
+bind-address: '*' #绑定IP地址
+allow-lan: true # 允许局域网访问
+mode: rule # 模式
+log-level: info # 日志等级
+external-controller: 0.0.0.0:9090 # 网页端口
+find-process-mode: strict   # 匹配所有进程
+tcp-concurrent: true # tcp 并发模式
+ipv6: false #软路由上不建议开启
+
+# ui部分
+# secret: ""
+# external-ui: .\ui\public
+
+geodata-mode: true
+geox-url:                           # 自定义 geodata url, 需要有代理的前提才能下载geoip和geosite
+    geoip: "https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+    geosite: "https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+    mmdb: "https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
+  
+# fakeip 本地存储，省略DNS查询
+profile:
+    store-selected: true              # 存储 select 选择记录
+    store-fake-ip: false               # 持久化 fake-ip
+
+# Tun 配置 Windows使用
+#tun:
+#  enable: true
+#  stack: system # gvisor / lwip
+#  dns-hijack:
+#    - 0.0.0.0:53 # 需要劫持的 DNS
+#  auto-route: true # 自动设置全局路由，可以自动将全局流量路由进入tun网卡。
+#  auto-detect-interface: true # 自动识别出口网卡
+
+dns:
+    enable: true # 关闭将使用系统 DNS
+    prefer-h3: true # 开启 DoH 支持 HTTP/3，将并发尝试
+    listen: 0.0.0.0:53 # 开启 DNS 服务器监听
+    # ipv6: false  #如果需要ipv6设置为true
+    default-nameserver:
+        - system # 如果是windows或安卓客户端可使用system，如果是软路由填写你的光猫的IP地址，拨号的路由器的IP地址 DNS 不必关闭光猫的ipv6功能,openclash运行在主路由上时填写127.0.0.1 记住是替换，不要保留system
+        - 223.5.5.5
+    enhanced-mode: fake-ip
+    fake-ip-range: 198.18.0.1/16
+    fake-ip-filter:   #这里可以填写不使用fakeip的域名
+        - '*.lan'
+        - '*.battlenet.com.cn'
+        - '*.battlenet.com'
+        - '*.blzstatic.cn'
+        - '*.battle.net'
+        # === Linksys Wireless Router ===
+        - '*.linksys.com'
+        - '*.linksyssmartwifi.com'
+        # === Apple Software Update Service ===
+        - 'swscan.apple.com'
+        - 'mesu.apple.com'
+        # === Windows 10 Connnect Detection ===
+        - '*.msftconnecttest.com'
+        - '*.msftncsi.com'
+        # === NTP Service ===
+        - 'time.*.com'
+        - 'time.*.gov'
+        - 'time.*.edu.cn'
+        - 'time.*.apple.com'
+        - 'time1.*.com'
+        - 'time2.*.com'
+        - 'time3.*.com'
+        - 'time4.*.com'
+        - 'time5.*.com'
+        - 'time6.*.com'
+        - 'time7.*.com'
+        - 'ntp.*.com'
+        - 'ntp.*.com'
+        - 'ntp1.*.com'
+        - 'ntp2.*.com'
+        - 'ntp3.*.com'
+        - 'ntp4.*.com'
+        - 'ntp5.*.com'
+        - 'ntp6.*.com'
+        - 'ntp7.*.com'
+        - '*.time.edu.cn'
+        - '*.ntp.org.cn'
+        - '+.pool.ntp.org'
+        - 'time1.cloud.tencent.com'
+        # === Music Service ===
+        ## NetEase
+        - '+.music.163.com'
+        - '*.126.net'
+        ## Baidu
+        - 'musicapi.taihe.com'
+        - 'music.taihe.com'
+        ## Kugou
+        - 'songsearch.kugou.com'
+        - 'trackercdn.kugou.com'
+        ## Kuwo
+        - '*.kuwo.cn'
+        ## JOOX
+        - 'api-jooxtt.sanook.com'
+        - 'api.joox.com'
+        - 'joox.com'
+        ## QQ
+        - '+.y.qq.com'
+        - '+.music.tc.qq.com'
+        - 'aqqmusic.tc.qq.com'
+        - '+.stream.qqmusic.qq.com'
+        ## Xiami
+        - '*.xiami.com'
+        ## Migu
+        - '+.music.migu.cn'
+        # === Game Service ===
+        ## Nintendo Switch
+        - '+.srv.nintendo.net'
+        ## Sony PlayStation
+        - '+.playstation.net'
+        - '+.playstation.com'
+        - '+.stun.playstation.net'
+        ## Microsoft Xbox
+        - 'xbox.*.microsoft.com'
+        - '+.xboxlive.com'
+        # === Other ===
+        ## QQ Quick Login
+        - 'localhost.ptlogin2.qq.com'
+        ## Golang
+        - 'proxy.golang.org'
+        ## STUN Server
+        - 'stun.*.*'
+        - 'stun.*.*.*'
+        ## Bilibili CDN
+        - '*.mcdn.bilivideo.cn'
+        # === Other ===
+        - '*.bilibili.com'
+        - '*.1huizhan.com'
+        - '*.3.cn'
+        - '*.300hu.com'
+        - '*.360buy.cn'
+        - '*.360buy.com'
+        - '*.360buy.com.cn'
+        - '*.360buyimg.com'
+        - '*.360buyinternational.com'
+        - '*.360top.com'
+        - '*.jd.com'
+    
+    nameserver:
+        - 192.168.1.1 # 如果是windows或安卓客户端可使用system，如果是软路由填写你的光猫的IP地址，拨号的路由器的IP地址 DNS 不必关闭光猫的ipv6功能,openclash运行在主路由上时填写127.0.0.1 记住是替换，不要保留system
+        - 223.5.5.5 # default value
+        - 114.114.114.114
+        - https://dns.alidns.com/dns-query#h3=true # 强制 HTTP/3，与 perfer-h3 无关，强制开启 DoH 的 HTTP/3 支持，若不支持将无法使用
+        - https://doh.pub/dns-query
+
+#  fallback:
+#    - https://1.0.0.1/dns-query
+#    - https://dns.google/dns-query
+    
+#  fallback-filter:    
+#    geoip: true
+#    geoip-code: CN
+#节点存放地址
 proxies:
   - {name: arise, server: tokyo.mfa.ee, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
   - {name: arise 2, server: icook.tw, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
