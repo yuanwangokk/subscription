@@ -1,162 +1,53 @@
-mixed-port: 7890 # 局域网访问Port
-bind-address: '*' #绑定IP地址
-allow-lan: true # 允许局域网访问
-mode: rule # 模式
-log-level: info # 日志等级
-external-controller: 0.0.0.0:9090 # 网页端口
-find-process-mode: strict   # 匹配所有进程
-tcp-concurrent: true # tcp 并发模式
-ipv6: false #软路由上不建议开启
-
-# ui部分
-# secret: ""
-# external-ui: .\ui\public
-
-geodata-mode: true
-geox-url:                           # 自定义 geodata url, 需要有代理的前提才能下载geoip和geosite
-    geoip: "https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
-    geosite: "https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
-    mmdb: "https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
-  
-# fakeip 本地存储，省略DNS查询
-profile:
-    store-selected: true              # 存储 select 选择记录
-    store-fake-ip: false               # 持久化 fake-ip
-
-# Tun 配置 Windows使用
-#tun:
-#  enable: true
-#  stack: system # gvisor / lwip
-#  dns-hijack:
-#    - 0.0.0.0:53 # 需要劫持的 DNS
-#  auto-route: true # 自动设置全局路由，可以自动将全局流量路由进入tun网卡。
-#  auto-detect-interface: true # 自动识别出口网卡
-
+# DNS 配置可自行修改
+port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
 dns:
-    enable: true # 关闭将使用系统 DNS
-    prefer-h3: true # 开启 DoH 支持 HTTP/3，将并发尝试
-    listen: 0.0.0.0:53 # 开启 DNS 服务器监听
-    # ipv6: false  #如果需要ipv6设置为true
-    default-nameserver:
-        - system # 如果是windows或安卓客户端可使用system，如果是软路由填写你的光猫的IP地址，拨号的路由器的IP地址 DNS 不必关闭光猫的ipv6功能,openclash运行在主路由上时填写127.0.0.1 记住是替换，不要保留system
-        - 223.5.5.5
-    enhanced-mode: fake-ip
-    fake-ip-range: 198.18.0.1/16
-    fake-ip-filter:   #这里可以填写不使用fakeip的域名
-        - '*.lan'
-        - '*.battlenet.com.cn'
-        - '*.battlenet.com'
-        - '*.blzstatic.cn'
-        - '*.battle.net'
-        # === Linksys Wireless Router ===
-        - '*.linksys.com'
-        - '*.linksyssmartwifi.com'
-        # === Apple Software Update Service ===
-        - 'swscan.apple.com'
-        - 'mesu.apple.com'
-        # === Windows 10 Connnect Detection ===
-        - '*.msftconnecttest.com'
-        - '*.msftncsi.com'
-        # === NTP Service ===
-        - 'time.*.com'
-        - 'time.*.gov'
-        - 'time.*.edu.cn'
-        - 'time.*.apple.com'
-        - 'time1.*.com'
-        - 'time2.*.com'
-        - 'time3.*.com'
-        - 'time4.*.com'
-        - 'time5.*.com'
-        - 'time6.*.com'
-        - 'time7.*.com'
-        - 'ntp.*.com'
-        - 'ntp.*.com'
-        - 'ntp1.*.com'
-        - 'ntp2.*.com'
-        - 'ntp3.*.com'
-        - 'ntp4.*.com'
-        - 'ntp5.*.com'
-        - 'ntp6.*.com'
-        - 'ntp7.*.com'
-        - '*.time.edu.cn'
-        - '*.ntp.org.cn'
-        - '+.pool.ntp.org'
-        - 'time1.cloud.tencent.com'
-        # === Music Service ===
-        ## NetEase
-        - '+.music.163.com'
-        - '*.126.net'
-        ## Baidu
-        - 'musicapi.taihe.com'
-        - 'music.taihe.com'
-        ## Kugou
-        - 'songsearch.kugou.com'
-        - 'trackercdn.kugou.com'
-        ## Kuwo
-        - '*.kuwo.cn'
-        ## JOOX
-        - 'api-jooxtt.sanook.com'
-        - 'api.joox.com'
-        - 'joox.com'
-        ## QQ
-        - '+.y.qq.com'
-        - '+.music.tc.qq.com'
-        - 'aqqmusic.tc.qq.com'
-        - '+.stream.qqmusic.qq.com'
-        ## Xiami
-        - '*.xiami.com'
-        ## Migu
-        - '+.music.migu.cn'
-        # === Game Service ===
-        ## Nintendo Switch
-        - '+.srv.nintendo.net'
-        ## Sony PlayStation
-        - '+.playstation.net'
-        - '+.playstation.com'
-        - '+.stun.playstation.net'
-        ## Microsoft Xbox
-        - 'xbox.*.microsoft.com'
-        - '+.xboxlive.com'
-        # === Other ===
-        ## QQ Quick Login
-        - 'localhost.ptlogin2.qq.com'
-        ## Golang
-        - 'proxy.golang.org'
-        ## STUN Server
-        - 'stun.*.*'
-        - 'stun.*.*.*'
-        ## Bilibili CDN
-        - '*.mcdn.bilivideo.cn'
-        # === Other ===
-        - '*.bilibili.com'
-        - '*.1huizhan.com'
-        - '*.3.cn'
-        - '*.300hu.com'
-        - '*.360buy.cn'
-        - '*.360buy.com'
-        - '*.360buy.com.cn'
-        - '*.360buyimg.com'
-        - '*.360buyinternational.com'
-        - '*.360top.com'
-        - '*.jd.com'
+  enable: true
+  listen: :53
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: 
+    - 223.5.5.5
+    - 119.29.29.29
+    - 114.114.114.114 
+    - 180.76.76.76
+    - 101.226.4.6
+    - 8.8.8.8    
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://alidns_ip/dns-query
+    - https://doh.pub/dns-query
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - https://1.1.1.1/dns-query
+    - https://1.0.0.1/dns-query
+    - https://doh.dns.sb/dns-query
+    - https://doh.opendns.com/dns-query
     
-    nameserver:
-        - system # 如果是windows或安卓客户端可使用system，如果是软路由填写你的光猫的IP地址，拨号的路由器的IP地址 DNS 不必关闭光猫的ipv6功能,openclash运行在主路由上时填写127.0.0.1 记住是替换，不要保留system
-        - 223.5.5.5 # default value
-        - 114.114.114.114
-        - https://dns.alidns.com/dns-query#h3=true # 强制 HTTP/3，与 perfer-h3 无关，强制开启 DoH 的 HTTP/3 支持，若不支持将无法使用
-        - https://doh.pub/dns-query
+  fallback:
+    - tls://dns.alidns.com
+    - https://dns.alidns.com/dns-query
+    - tls://dns.pub
+    - tls://dot.360.cn
+    - https://doh.360.cn/dns-query
+    - tls://dns.google
+    - tls://1.1.1.1
+    - https://1.1.1.1/dns-query
+    - https://doh.opendns.com/dns-query
+    
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
 
-#  fallback:
-#    - https://1.0.0.1/dns-query
-#    - https://dns.google/dns-query
-    
-#  fallback-filter:    
-#    geoip: true
-#    geoip-code: CN
-#节点存放地址
 proxies:
-- name: war                                                     # 可以自定义节点名称
+- name: warp-wireguard                                          # 可以自定义节点名称
   type: wireguard         
   server: 162.159.192.108                                       # 可自定义优选 EndPoint IP，与下方端口相对应
   port: 1180                                                    # 可自定义优选 EndPoint IP，与上方 IP 相对应
@@ -177,113 +68,35 @@ proxies:
   private-key: OJHbmRxQJ+c3JuJjh7fC/H4nwKX4USykLwDnMhIcJUk=     # 获取 warp 的 私钥
   udp: true
 
-#代理组
-proxy-groups:    
-#自动选择
-    - name: "Auto"
-      type: url-test # 下面开启了自动测速
-      proxies:
-          - war
-          - warp
-      url: "http://connectivitycheck.gstatic.com/generate_204"
-      interval: 300      
-#其他规则
-    - name: "PROXY"
-      type: select # 下面开启了自动测速
-      proxies:
-          - war
-          - warp
-          - "Auto"
+# 分流组可自行创建或添加，proxies 参数下的节点名称，按需求自行增减，确保出现的节点名称在代理协议中可查找
+proxy-groups:
+- name: 负载均衡
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  proxies:
+    - warp-wireguard
+    - warp
 
-# 奈飞      
-    - name: "Netflix"
-      type: select # 下面开启了自动测速
-      proxies:
-          - war
-          - warp
-
-# 迪士尼      
-    - name: "Disney"
-      type: select # 下面开启了自动测速
-      proxies:
-          - war
-          - warp
-
-# 油管      
-    - name: "Youtube"
-      type: select # 下面开启了自动测速
-      proxies:
-          - war
-          - warp
-
-# 声破天      
-    - name: "Spotify"
-      type: select # 下面开启了自动测速
-      proxies:
-          - war
-          - warp
-
-# Tiktok      
-    - name: "Tiktok"
-      type: select # 下面开启了自动测速
-      proxies:
-          - war
-          - warp
-
-# 电报      
-    - name: "Telegram"
-      type: select # 下面开启了自动测速
-      proxies:
-          - war
-          - warp
-
-     
-      
-#规则集
-rule-providers:      
-    cn:
-        type: http
-        behavior: domain
-        interval: 86400
-        path: ./ruleset/cn_domain.yaml
-        url: "https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/cn_domain.yaml"
+- name: 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+    - warp-wireguard
+    - warp
     
+- name: 🌍选择代理
+  type: select
+  proxies:
+    - 负载均衡                                            # 自定义添加的节点名称
+    - 自动选择
+    - DIRECT
+    - warp-wireguard
+    - warp
+
+# 代理规则可自行添加 
 rules:
-#域名规则
-    - GEOSITE,private,DIRECT 
-    - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,PROXY
-    - DOMAIN-SUFFIX,services.googleapis.cn,PROXY
-    - DOMAIN-SUFFIX,voidsec.com,PROXY   #voidsec 礼貌性添加所谓的dns泄露检测站
-    - DOMAIN-SUFFIX,browserleaks.com,PROXY #browserleaks 礼貌性添加所谓的dns泄露检测站
-    - RULE-SET,cn,DIRECT
-    - GEOSITE,apple@cn,DIRECT
-    - GEOSITE,apple,DIRECT
-    - GEOSITE,icloud,DIRECT
-    - GEOSITE,onedrive,DIRECT
-    - GEOSITE,microsoft@cn,DIRECT 
-    - GEOSITE,steam@cn,DIRECT
-    - GEOSITE,category-games@cn,DIRECT 
-    - GEOSITE,google,PROXY
-    - GEOSITE,youtube,Youtube
-    - GEOSITE,twitter,PROXY
-    - GEOSITE,telegram,Telegram
-    - GEOSITE,facebook,PROXY
-    - GEOSITE,netflix,Netflix
-    - GEOSITE,disney,Disney
-    - GEOSITE,spotify,Spotify
-    - GEOSITE,tiktok,Tiktok
-    - GEOSITE,category-scholar-!cn,PROXY
-    - GEOSITE,geolocation-!cn,PROXY
-    - GEOSITE,cn,DIRECT 
-    
-#IP规则    
-    - GEOIP,private,DIRECT,no-resolve     
-    - GEOIP,telegram,Telegram
-    - GEOIP,netflix,Netflix
-    - GEOIP,google,PROXY
-    - GEOIP,twitter,PROXY
-    - GEOIP,JP,PROXY
-    - GEOIP,CN,DIRECT
-
-#最终匹配
-    - MATCH,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,🌍选择代理
