@@ -15,7 +15,7 @@ dns:
     - 8.8.8.8
     - 1.1.1.1
   enhanced-mode: redir-host
-  fake-ip-range: 172.16.0.1/16
+  fake-ip-range: 172.16.0.1/32
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
