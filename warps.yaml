@@ -29,6 +29,7 @@ dns:
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
+    - https://dns.google/dns-query
   fallback:
     - tls://8.8.4.4
     - tls://1.1.1.1
