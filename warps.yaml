@@ -24,8 +24,6 @@ dns:
   fallback:
     - tls://8.8.8.8
     - tls://1.1.1.1
-  proxy-server-nameserver:
-    - https://doh.pub/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
