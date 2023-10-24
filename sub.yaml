@@ -1,28 +1,31 @@
-mixed-port: 7890
+port: 7890
 allow-lan: true
+mode: rule
 log-level: info
-external-controller: 0.0.0.0:9090
+unified-delay: true
+global-client-fingerprint: chrome
 dns:
   enable: true
-  prefer-h3: true
+  listen: :53
   ipv6: true
-  listen: 0.0.0.0:1053
-  use-hosts: true
-  fake-ip-range: 198.18.0.1/16
   enhanced-mode: fake-ip
-  fake-ip-filter: ['+.*']
-  default-nameserver:
-    - https://223.5.5.5/dns-query
-    - https://1.12.12.12/dns-query
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: 
+    - 223.5.5.5
+    - 114.114.114.114
+    - 8.8.8.8
   nameserver:
-    - tls://dns.google
-    - https://cloudflare-dns.com/dns-query
-  proxy-server-nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-  nameserver-policy:
-    'rule-set:microsoft-cn,apple-cn,google-cn,games-cn': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
-    'rule-set:cn,lan': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
+  fallback:
+    - https://1.0.0.1/dns-query
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
 proxies:
   - {"name":"香港_1","type":"vless","server":"154.194.2.240","port":443,"uuid":"a13df940-020c-465f-bc89-ee5279b5cd6a","tls":true,"servername":"kr23.ylks01.eu.org","network":"ws","ws-opts":{"path":"/youtube-由零開始","headers":{"host":"kr23.ylks01.eu.org"}}}
   - {"name":"美国_1","type":"vless","server":"malaysia.com","port":8443,"uuid":"a13df940-020c-465f-bc89-ee5279b5cd6a","tls":true,"servername":"bed22.ylkszy.eu.org","network":"ws","ws-opts":{"path":"/youtube-由零開始","headers":{"host":"bed22.ylkszy.eu.org"}}}
