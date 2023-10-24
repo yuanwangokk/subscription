@@ -16,16 +16,6 @@ dns:
     - 1.1.1.1
   enhanced-mode: redir-host
   fake-ip-range: 172.16.0.1/32
-  fake-ip-filter:
-    - '*.lan'
-  nameserver-policy:
-    '*.baidu.com': '114.114.114.114'
-    '*.internal.crop.com': '10.0.0.1'
-    'geosite:cn': https://doh.pub/dns-query
-    '*.google.com': '8.8.8.8'
-    '*.youtube.com': '8.8.8.8'
-    '*.hithub.com': '8.8.8.8'
-    '*.cloudflare.com': '1.1.1.1'
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
@@ -43,18 +33,9 @@ dns:
     - https://dns.adguard.com/dns-query
   fallback-filter:
     geoip: true
-    geoip-code: CN
-    geosite:
-      - gfw
     ipcidr:
       - 240.0.0.0/4
       - 0.0.0.0/32
-    domain:
-      - '*.google.com'
-      - '*.facebook.com'
-      - '*.youtube.com'
-      - '*.github.com'
-      - '*.cloudflare.com'
 
 
 
