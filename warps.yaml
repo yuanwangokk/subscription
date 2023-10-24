@@ -20,8 +20,8 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 172.16.0.1/16
   fake-ip-filter:
-    - '*.google.com
-    - '*.youtube.com
+    - '*.google.com'
+    - '*.youtube.com'
   nameserver-policy:
     '*.baidu.com': '223.5.5.5'
     '*.google.com': '8.8.8.8'
@@ -47,9 +47,6 @@ dns:
     - https://dns.adguard.com/dns-query
   fallback-filter:
     geoip: true
-    geoip-code: cn
-    geosite:
-      - gfw
     ipcidr:
       - 240.0.0.0/4
       - 0.0.0.0/32
