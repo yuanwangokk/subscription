@@ -24,6 +24,7 @@ dns:
   nameserver-policy:
     '*.baidu.com': '223.5.5.5'
     '*.google.com': '8.8.8.8'
+    'geosite:google': https://doh.pub/dns-query
     'geosite:cn': https://doh.pub/dns-query
     '*.github.com': '8.8.8.8'
     '*.youtube.com': '8.8.8.8'
@@ -41,7 +42,7 @@ dns:
     - https://dns.google/dns-query
   fallback-filter:
     geoip: true
-    geoip-code: CN
+    geoip-code: google
     geosite:
       - gfw
     ipcidr:
