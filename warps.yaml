@@ -7,25 +7,6 @@ geodata-mode: true
 tcp-concurrent: true
 log-level: info
 external-controller: :9090
-dns:
-  enable: true
-  prefer-h3: true
-  listen: 0.0.0.0:1053
-  ipv6: true
-  default-nameserver:
-    - 223.5.5.5
-    - 119.29.29
-    - 8.8.8.8
-    - 1.1.1.1
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter:
-    - '*.lan'
-  fallback:
-    - tls://8.8.8.8
-    - tls://1.1.1.1
-
-
 proxies:
 - name: warp-wireguard                                          # 可以自定义节点名称
   type: wireguard         
