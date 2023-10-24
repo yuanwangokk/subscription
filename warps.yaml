@@ -53,6 +53,9 @@ dns:
       - 240.0.0.0/4
     domain:
       - '*.facebook.com'
+      - '*.google.com'
+      - '*.youtube.com'
+
 
 
 proxies:
