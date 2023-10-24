@@ -18,14 +18,6 @@ dns:
     - 1.1.1.1
   enhanced-mode: redir-host
   fake-ip-range: 172.16.0.1/16
-  nameserver-policy:
-    '*.baidu.com': '223.5.5.5'
-    '*.google.com': '8.8.8.8'
-    'geosite:google': https://doh.pub/dns-query
-    'geosite:cn': https://doh.pub/dns-query
-    '*.github.com': '8.8.8.8'
-    '*.youtube.com': '8.8.8.8'
-    '*.cloudflare.com': '1.1.1.1'
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
