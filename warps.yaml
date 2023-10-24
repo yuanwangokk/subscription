@@ -20,12 +20,12 @@ dns:
     - '*.lan'
   nameserver-policy:
     '*.baidu.com': '114.114.114.114'
-    '+.internal.crop.com': '10.0.0.1'
+    '*.internal.crop.com': '10.0.0.1'
     'geosite:cn': https://doh.pub/dns-query
-	'*.google.com': '8.8.8.8'
-	'*.youtube.com': '8.8.8.8'
-	'*.hithub.com': '8.8.8.8'
-	'*.cloudflare.com': '1.1.1.1'
+    '*.google.com': '8.8.8.8'
+    '*.youtube.com': '8.8.8.8'
+    '*.hithub.com': '8.8.8.8'
+    '*.cloudflare.com': '1.1.1.1'
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
