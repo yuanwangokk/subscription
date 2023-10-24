@@ -50,7 +50,7 @@ dns:
       - '*.google.com'
       - '*.facebook.com'
       - '*.youtube.com'
-      - '*.github.com.com'
+      - '*.github.com'
 
 
 proxies:
