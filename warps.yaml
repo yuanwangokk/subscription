@@ -21,13 +21,13 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - '*.lan'
-    - '*.google.com'
-    - '*.github.com'
-    - '*.youtube.com'
   nameserver-policy:
-    '*.baidu.com': '114.114.114.114'
+    '*.baidu.com': '223.5.5.5'
     '*.google.com': '8.8.8.8'
     'geosite:cn': https://doh.pub/dns-query
+    '*.github.com': '8.8.8.8'
+    '*.youtube.com': '8.8.8.8'
+    '*.cloudflare.com': '1.1.1.1'
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
@@ -51,6 +51,7 @@ dns:
       - '*.facebook.com'
       - '*.youtube.com'
       - '*.github.com'
+      - '*.cloudflare.com'
 
 
 proxies:
