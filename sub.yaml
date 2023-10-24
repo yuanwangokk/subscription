@@ -16,15 +16,13 @@ dns:
     - https://1.12.12.12/dns-query
   nameserver:
     - tls://dns.google
-    - https://dns.cloudflare.com/dns-query
+    - https://cloudflare-dns.com/dns-query
   proxy-server-nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
   nameserver-policy:
-    'geosite:microsoft@cn,apple-cn,google-cn,category-games@cn': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
-    'geosite:cn,private': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
-
-
+    'rule-set:microsoft-cn,apple-cn,google-cn,games-cn': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
+    'rule-set:cn,lan': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
 proxies:
   - {"name":"香港_1","type":"vless","server":"154.194.2.240","port":443,"uuid":"a13df940-020c-465f-bc89-ee5279b5cd6a","tls":true,"servername":"kr23.ylks01.eu.org","network":"ws","ws-opts":{"path":"/youtube-由零開始","headers":{"host":"kr23.ylks01.eu.org"}}}
   - {"name":"美国_1","type":"vless","server":"malaysia.com","port":8443,"uuid":"a13df940-020c-465f-bc89-ee5279b5cd6a","tls":true,"servername":"bed22.ylkszy.eu.org","network":"ws","ws-opts":{"path":"/youtube-由零開始","headers":{"host":"bed22.ylkszy.eu.org"}}}
