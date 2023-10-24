@@ -7,35 +7,6 @@ geodata-mode: true
 tcp-concurrent: true
 log-level: info
 external-controller: :9090
-dns:
-  enable: true
-  listen: 127.0.0.1:53
-  ipv6: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  default-nameserver: 
-    - 223.5.5.5
-    - 119.29.29.29
-    - 114.114.114.114 
-    - 180.76.76.76
-    - 101.226.4.6
-    - 8.8.8.8    
-  nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://alidns_ip/dns-query
-    - https://doh.pub/dns-query
-    - https://dns.google/dns-query
-    - https://cloudflare-dns.com/dns-query
-    - https://1.1.1.1/dns-query
-    - https://1.0.0.1/dns-query
-    - https://doh.dns.sb/dns-query
-    - https://doh.opendns.com/dns-query
-    
-  fallback:
-    - tls://dns.google
-    - tls://1.1.1.1
-    
-
 proxies:
 - name: warp-wireguard                                          # 可以自定义节点名称
   type: wireguard         
