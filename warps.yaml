@@ -42,7 +42,7 @@ dns:
     - https://dns.google/dns-query
   fallback-filter:
     geoip: true
-    geoip-code: google
+    geoip-code: cn, cn
     geosite:
       - gfw
     ipcidr:
