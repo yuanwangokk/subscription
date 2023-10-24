@@ -20,7 +20,9 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 172.16.0.1/16
   fake-ip-filter:
-    - '*.lan'
+    - '*.google.com
+    - '*.youtube.com
+
   nameserver-policy:
     '*.baidu.com': '223.5.5.5'
     '*.google.com': '8.8.8.8'
