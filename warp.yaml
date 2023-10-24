@@ -1,33 +1,31 @@
 port: 7890
-socks-port: 7891
 allow-lan: true
-mode: Rule
-ipv6: true
-geodata-mode: true
-tcp-concurrent: true
+mode: rule
 log-level: info
-external-controller: :9090
+unified-delay: true
+global-client-fingerprint: chrome
 dns:
   enable: true
-  prefer-h3: true
+  listen: :53
   ipv6: true
-  listen: 0.0.0.0:1053
-  use-hosts: true
-  fake-ip-range: 198.18.0.1/16
   enhanced-mode: fake-ip
-  fake-ip-filter: ['+.*']
-  default-nameserver:
-    - https://223.5.5.5/dns-query
-    - https://1.12.12.12/dns-query
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: 
+    - 223.5.5.5
+    - 114.114.114.114
+    - 8.8.8.8
   nameserver:
-    - tls://dns.google
-    - https://cloudflare-dns.com/dns-query
-  proxy-server-nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-  nameserver-policy:
-    'rule-set:microsoft-cn,apple-cn,google-cn,games-cn': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
-    'rule-set:cn,lan': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
+  fallback:
+    - https://1.0.0.1/dns-query
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
 proxies:
   - {name: "☁️ CFWarp-A",type: wireguard,server: 162.159.192.100,port: 4198,ip: 172.16.0.2,private-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,remote-dns-resolve: false,udp: true}
   - {name: "☁️ CFWarp-B",type: wireguard,server: 162.159.192.100,port: 7281,ip: 172.16.0.2,private-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,remote-dns-resolve: false,udp: true}
