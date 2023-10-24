@@ -19,8 +19,9 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - '*.lan'
-    - localhost.ptlogin2.qq.com
+    - '*.google.com'
     - '*.github.com'
+    - '*.youtube.com'
   nameserver-policy:
     '*.baidu.com': '114.114.114.114'
     '*.google.com': '8.8.8.8'
