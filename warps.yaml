@@ -22,7 +22,6 @@ dns:
   fake-ip-filter:
     - '*.google.com
     - '*.youtube.com
-
   nameserver-policy:
     '*.baidu.com': '223.5.5.5'
     '*.google.com': '8.8.8.8'
