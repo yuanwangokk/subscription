@@ -1,0 +1,85 @@
+# DNS 配置可自行修改
+port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
+dns:
+  enable: true
+  listen: :53
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: 
+    - 223.5.5.5
+    - 119.29.29.29
+    - 8.8.8.8
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fallback:
+    - https://1.0.0.1/dns-query
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
+# 当前 13 个主流协议节点配置模版，按需求修改，如不需要使用某协议节点，则无需删除，确保代理分流中没有该节点即可
+proxies:
+- name: warp-wireguard                                       # 可以自定义节点名称
+  type: wireguard         
+  server: 162.159.192.170                                # 可自定义优选 EndPoint IP，与下方端口相对应
+  port: 4177                                                 # 可自定义优选 EndPoint IP，与上方 IP 相对应
+  ip: 172.16.0.2/32
+  ipv6: 2606:4700:110:8525:b44d:c05:a26a:b74/128               # warp 的私有 ipv6 地址，如删除本行，表示仅IPV4
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  private-key: OGBzduaX1WHJdZmSxP2h7uIMi5MOcQcZg6reyUkP3lY=  # 获取 warp 的 私钥
+  udp: true
+  
+  
+- name: warp                                             # 可以自定义节点名称
+  type: wireguard         
+  server: 162.159.192.170                                 # 可自定义优选 EndPoint IP，与下方端口相对应
+  port: 4177                                                 # 可自定义优选 EndPoint IP，与上方 IP 相对应
+  ip: 172.16.0.2/32
+  ipv6: 2606:4700:110:82dc:3d6e:d079:667c:c666/128               # warp 的私有 ipv6 地址，如删除本行，表示仅IPV4
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  private-key: OJHbmRxQJ+c3JuJjh7fC/H4nwKX4USykLwDnMhIcJUk=  # 获取 warp 的 私钥
+  udp: true
+  
+
+# 分流组可自行创建或添加，proxies 参数下的节点名称，按需求自行增减，确保出现的节点名称在代理协议中可查找
+proxy-groups:
+- name: 负载均衡
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  proxies:
+    - warp-wireguard		# 自定义添加的节点名称    
+    - warp    
+
+- name: 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+    - warp-wireguard
+    - warp    
+    
+- name: 🌍选择代理
+  type: select
+  proxies:
+    - 负载均衡          	 # 自定义添加的节点名称
+    - 自动选择
+    - DIRECT
+    - warp-wireguard
+    - warp    
+
+# 代理规则可自行添加 
+rules:
+  - GEOIP,CN,DIRECT
+  - MATCH,🌍选择代理
