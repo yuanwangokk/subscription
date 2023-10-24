@@ -18,7 +18,7 @@ dns:
     - 8.8.8.8
     - 1.1.1.1
   enhanced-mode: fake-ip
-  fake-ip-range: 172.0.0.1/16
+  fake-ip-range: 172.16.0.1/16
   fake-ip-filter:
     - '*.lan'
   nameserver-policy:
