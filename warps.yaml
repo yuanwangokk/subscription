@@ -18,7 +18,7 @@ dns:
     - 8.8.8.8
     - 1.1.1.1
   enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
+  fake-ip-range: 172.0.0.1/16
   fake-ip-filter:
     - '*.lan'
   nameserver-policy:
@@ -34,8 +34,10 @@ dns:
     - https://dns.alidns.com/dns-query
     - https://dns.google/dns-query
   fallback:
-    - tls://8.8.4.4
-    - tls://1.1.1.1
+    - tls://8.8.8.8:853
+    - tls://1.1.1.1:853
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.adguard.com/dns-query
   proxy-server-nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
