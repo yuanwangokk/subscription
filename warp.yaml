@@ -21,13 +21,13 @@ dns:
     - https://1.12.12.12/dns-query
   nameserver:
     - tls://dns.google
-    - https://dns.cloudflare.com/dns-query
+    - https://cloudflare-dns.com/dns-query
   proxy-server-nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
   nameserver-policy:
-    'geosite:microsoft@cn,apple-cn,google-cn,category-games@cn': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
-    'geosite:cn,private': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
+    'rule-set:microsoft-cn,apple-cn,google-cn,games-cn': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
+    'rule-set:cn,lan': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
 proxies:
   - {name: "☁️ CFWarp-A",type: wireguard,server: 162.159.192.100,port: 4198,ip: 172.16.0.2,private-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,remote-dns-resolve: false,udp: true}
   - {name: "☁️ CFWarp-B",type: wireguard,server: 162.159.192.100,port: 7281,ip: 172.16.0.2,private-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,remote-dns-resolve: false,udp: true}
