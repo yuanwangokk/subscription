@@ -141,7 +141,7 @@ dns:
         - '*.jd.com'
     
     nameserver:
-        - 192.168.1.1 # 如果是windows或安卓客户端可使用system，如果是软路由填写你的光猫的IP地址，拨号的路由器的IP地址 DNS 不必关闭光猫的ipv6功能,openclash运行在主路由上时填写127.0.0.1 记住是替换，不要保留system
+        - system # 如果是windows或安卓客户端可使用system，如果是软路由填写你的光猫的IP地址，拨号的路由器的IP地址 DNS 不必关闭光猫的ipv6功能,openclash运行在主路由上时填写127.0.0.1 记住是替换，不要保留system
         - 223.5.5.5 # default value
         - 114.114.114.114
         - https://dns.alidns.com/dns-query#h3=true # 强制 HTTP/3，与 perfer-h3 无关，强制开启 DoH 的 HTTP/3 支持，若不支持将无法使用
