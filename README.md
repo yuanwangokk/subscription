@@ -10,11 +10,11 @@ cloudflare邮箱：yuanwangokk@proton.me
 
 =====================================================
                                                                                     
-订阅链接    https://ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/frist.yaml
+订阅链接    https://gh-proxy.com/https://github.com/yuanwangokk/subscription/blob/main/frist.yaml
 
-订阅链接    https://ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/sub.yaml
+订阅链接    https://gh-proxy.com/https://github.com/yuanwangokk/subscription/blob/main/sub.yaml
 
-订阅链接    https://ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/warp.yaml
+订阅链接    https://gh-proxy.com/https://github.com/yuanwangokk/subscription/blob/main/warp.yaml
 
 =====================================================
 
