@@ -7,6 +7,46 @@ geodata-mode: true
 tcp-concurrent: true
 log-level: info
 external-controller: :9090
+dns:
+  enable: true
+  prefer-h3: true
+  ipv6: true
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+    - 8.8.8.8
+    - 1.1.1.1
+  enhanced-mode: redir-host
+  fake-ip-range: 172.16.0.1/16
+  nameserver-policy:
+    '*.baidu.com': '223.5.5.5'
+    '*.google.com': '8.8.8.8'
+    'geosite:google': https://doh.pub/dns-query
+    'geosite:cn': https://doh.pub/dns-query
+    '*.github.com': '8.8.8.8'
+    '*.youtube.com': '8.8.8.8'
+    '*.cloudflare.com': '1.1.1.1'
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://dns.google/dns-query
+    - https://dns.adguard.com/dns-query
+  fallback:
+    - tls://8.8.8.8:853
+    - tls://1.1.1.1:853
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.adguard.com/dns-query
+  proxy-server-nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://dns.google/dns-query
+    - https://dns.adguard.com/dns-query
+  fallback-filter:
+    geoip: true
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
+
 proxies:
   - {name: "☁️ CFWarp-A",type: wireguard,server: 162.159.192.100,port: 4198,ip: 172.16.0.2,private-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,remote-dns-resolve: false,udp: true}
   - {name: "☁️ CFWarp-B",type: wireguard,server: 162.159.192.100,port: 7281,ip: 172.16.0.2,private-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=,remote-dns-resolve: false,udp: true}
