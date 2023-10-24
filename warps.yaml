@@ -16,16 +16,8 @@ dns:
     - 119.29.29.29
     - 8.8.8.8
     - 1.1.1.1
-  enhanced-mode: fake-ip
+  enhanced-mode: redir-host
   fake-ip-range: 172.16.0.1/16
-  nameserver-policy:
-    '*.baidu.com': '223.5.5.5'
-    '*.google.com': '8.8.8.8'
-    'geosite:google': https://doh.pub/dns-query
-    'geosite:cn': https://doh.pub/dns-query
-    '*.github.com': '8.8.8.8'
-    '*.youtube.com': '8.8.8.8'
-    '*.cloudflare.com': '1.1.1.1'
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
@@ -46,11 +38,6 @@ dns:
     ipcidr:
       - 240.0.0.0/4
       - 0.0.0.0/32
-    domain:
-      - '*.facebook.com'
-      - '*.google.com'
-      - '*.youtube.com'
-
 
 
 proxies:
