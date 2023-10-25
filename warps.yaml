@@ -55,8 +55,8 @@ proxies:
   
 - name: warp                                                    # 可以自定义节点名称
   type: wireguard         
-  server: 162.159.192.108                                       # 可自定义优选 EndPoint IP，与下方端口相对应
-  port: 1180                                                    # 可自定义优选 EndPoint IP，与上方 IP 相对应
+  server: 162.159.192.59                                       # 可自定义优选 EndPoint IP，与下方端口相对应
+  port: 7152                                                    # 可自定义优选 EndPoint IP，与上方 IP 相对应
   ip: 172.16.0.2/32
   ipv6: 2606:4700:110:82dc:3d6e:d079:667c:c666/128              # warp 的私有 ipv6 地址，如删除本行，表示仅IPV4
   public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
