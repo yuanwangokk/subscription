@@ -1,12 +1,11 @@
-port: 7890
-socks-port: 7891
-allow-lan: true
-mode: Rule
+mode: rule
 ipv6: true
-geodata-mode: true
-tcp-concurrent: true
 log-level: info
-external-controller: :9090
+allow-lan: false
+mixed-port: 7890
+unified-delay: false
+tcp-concurrent: true
+
 dns:
   enable: true
   prefer-h3: true
@@ -42,26 +41,31 @@ dns:
 
 
 proxies:
-- name: warp-wireguard                                          # 可以自定义节点名称
-  type: wireguard         
-  server: 162.159.192.108                                       # 可自定义优选 EndPoint IP，与下方端口相对应
-  port: 1180                                                    # 可自定义优选 EndPoint IP，与上方 IP 相对应
-  ip: 172.16.0.2/32
-  ipv6: 2606:4700:110:8525:b44d:c05:a26a:b74/128                # warp 的私有 ipv6 地址，如删除本行，表示仅IPV4
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: OGBzduaX1WHJdZmSxP2h7uIMi5MOcQcZg6reyUkP3lY=     # 获取 warp 的 私钥
-  udp: true
-  
-  
-- name: warp                                                    # 可以自定义节点名称
-  type: wireguard         
-  server: 162.159.192.59                                       # 可自定义优选 EndPoint IP，与下方端口相对应
-  port: 7152                                                    # 可自定义优选 EndPoint IP，与上方 IP 相对应
-  ip: 172.16.0.2/32
-  ipv6: 2606:4700:110:82dc:3d6e:d079:667c:c666/128              # warp 的私有 ipv6 地址，如删除本行，表示仅IPV4
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: OJHbmRxQJ+c3JuJjh7fC/H4nwKX4USykLwDnMhIcJUk=     # 获取 warp 的 私钥
-  udp: true
+  - name: "warp-wireguard"
+    type: wireguard
+    server: 188.114.96.114
+    port: 3138
+    ip: "172.16.0.2/32"
+    ipv6: "2606:4700:110:8757:e078:93e3:c706:cb1f/128"
+    private-key: "UAUwRD2SPBoCSTaFJSFwe9SEOA7TiSqd0+9S5zJtHkw="
+    public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+    udp: true
+    reserved: [203, 146, 161]
+    mtu: 1280
+
+    
+  - name: "warp"
+    type: wireguard
+    server: 188.114.96.114
+    port: 3138
+    ip: "172.16.0.2/32"
+    ipv6: "2606:4700:110:8757:e078:93e3:c706:cb1f/128"
+    private-key: "UAUwRD2SPBoCSTaFJSFwe9SEOA7TiSqd0+9S5zJtHkw="
+    public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+    udp: true
+    reserved: [203, 146, 161]
+    mtu: 1280
+
 
 proxy-groups:
   - name: 🚀 节点选择
