@@ -17,7 +17,7 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
   enhanced-mode: fake-ip
-  fake-ip-range: 172.16.0.1/32
+  fake-ip-range: 172.0.0.1/32
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
@@ -37,7 +37,8 @@ dns:
     geoip: true
     ipcidr:
       - 240.0.0.0/4
-
+      - 0.0.0.0/32
+      
 proxies:
   - {name: arise, server: tokyo.mfa.ee, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
   - {name: arise 2, server: icook.tw, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
