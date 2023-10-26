@@ -17,7 +17,7 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
   enhanced-mode: fake-ip
-  fake-ip-range: 172.0.0.1/32
+  fake-ip-range: 172.16.0.1/32
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
