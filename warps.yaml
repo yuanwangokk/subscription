@@ -2,41 +2,8 @@ port: 7890
 socks-port: 7891
 allow-lan: true
 mode: Rule
-ipv6: true
-geodata-mode: true
-tcp-concurrent: true
 log-level: info
 external-controller: :9090
-dns:
-  enable: true
-  prefer-h3: true
-  ipv6: true
-  default-nameserver:
-    - 8.8.8.8
-    - 1.1.1.1
-    - 223.5.5.5
-    - 119.29.29.29
-  enhanced-mode: redir-host
-  nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.adguard.com/dns-query
-  fallback:
-    - tls://8.8.8.8:853
-    - tls://1.1.1.1:853
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.adguard.com/dns-query
-  proxy-server-nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.adguard.com/dns-query
-  fallback-filter:
-    geoip: true
-    ipcidr:
-      - 240.0.0.0/4
-      - 0.0.0.0/32
 
 
 
