@@ -1,30 +1,9 @@
-port: 7890
-allow-lan: true
-mode: rule
-log-level: info
-unified-delay: true
-global-client-fingerprint: chrome
-dns:
-  enable: true
-  listen: :53
-  ipv6: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  default-nameserver: 
-    - 223.5.5.5
-    - 114.114.114.114
-    - 8.8.8.8
-  nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
-  fallback:
-    - https://1.0.0.1/dns-query
-    - tls://dns.google
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
+mixed-port: 7890 
+bind-address: '*' 
+allow-lan: true 
+mode: rule 
+log-level: info 
+ipv6: false 
       
 proxies:
   - {name: arise, server: tokyo.mfa.ee, port: 80, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: luckss.1461128563.workers.dev, network: ws, ws-opts: {path: "/password?ed=2048", headers: {Host: luckss.1461128563.workers.dev}}, udp: false}
