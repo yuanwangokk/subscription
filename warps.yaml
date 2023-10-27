@@ -5,10 +5,10 @@ mode: rule
 log-level: info 
 ipv6: false 
 dns:
-    enable: true 
-    prefer-h3: true 
-    listen: 0.0.0.0:53 
-    default-nameserver:
+  enable: true 
+  prefer-h3: true 
+  listen: 0.0.0.0:53 
+  default-nameserver:
   - 8.8.8.8
   - 1.1.1.1
   - 223.5.5.5
@@ -23,9 +23,9 @@ dns:
   - https://dns.google/dns-query
   - https://cloudflare-dns.com/dns-query
   - https://doh.opendns.com/dns-query
-    fake-ip-range: 172.16.0.2/32
-    enhanced-mode: redir-host
-    fake-ip-filter:   
+  fake-ip-range: 172.16.0.2/32
+  enhanced-mode: redir-host
+  fake-ip-filter:   
   - '*.lan'
   - '*.battlenet.com.cn'
   - '*.battlenet.com'
