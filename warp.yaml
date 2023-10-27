@@ -23,7 +23,6 @@ dns:
   - https://dns.google/dns-query
   - https://cloudflare-dns.com/dns-query
   - https://doh.opendns.com/dns-query
-    fake-ip-range: 172.16.0.2/32
     enhanced-mode: redir-host
     fake-ip-range: 172.16.0.2/16
     fake-ip-filter:   
