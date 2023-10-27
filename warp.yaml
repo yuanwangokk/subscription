@@ -1,42 +1,117 @@
-port: 7890
-socks-port: 7891
-allow-lan: true
-mode: Rule
-ipv6: true
-geodata-mode: true
-tcp-concurrent: true
-log-level: info
-external-controller: :9090
+mixed-port: 7890 
+bind-address: '*' 
+allow-lan: true 
+mode: rule 
+log-level: info 
+ipv6: false 
 dns:
-  enable: true
-  prefer-h3: true
-  ipv6: true
-  default-nameserver:
-    - 8.8.8.8
-    - 1.1.1.1
-    - 223.5.5.5
-    - 119.29.29.29
-  enhanced-mode: redir-host
+    enable: true 
+    prefer-h3: true 
+    listen: 0.0.0.0:53 
+    default-nameserver:
+  - 8.8.8.8
+  - 1.1.1.1
+  - 223.5.5.5
+  - 119.29.29.29
+  - 114.114.114.114
+  - 208.67.222.222
+  - 208.67.220.220
+  - 208.67.222.220
+  - 208.67.220.222
+  - https://doh.pub/dns-query
+  - https://dns.alidns.com/dns-query
+  - https://dns.google/dns-query
+  - https://cloudflare-dns.com/dns-query
+  - https://doh.opendns.com/dns-query
+    fake-ip-range: 172.16.0.2/32
+    enhanced-mode: redir-host
+    fake-ip-range: 172.16.0.2/16
+    fake-ip-filter:   
+  - '*.lan'
+  - '*.battlenet.com.cn'
+  - '*.battlenet.com'
+  - '*.blzstatic.cn'
+  - '*.battle.net'
+  - '*.linksys.com'
+  - '*.linksyssmartwifi.com'
+  - 'swscan.apple.com'
+  - 'mesu.apple.com'
+  - '*.msftconnecttest.com'
+  - '*.msftncsi.com'
+  - 'time.*.com'
+  - 'time.*.gov'
+  - 'time.*.edu.cn'
+  - 'time.*.apple.com'
+  - 'time1.*.com'
+  - 'time2.*.com'
+  - 'time3.*.com'
+  - 'time4.*.com'
+  - 'time5.*.com'
+  - 'time6.*.com'
+  - 'time7.*.com'
+  - 'ntp.*.com'
+  - 'ntp.*.com'
+  - 'ntp1.*.com'
+  - 'ntp2.*.com'
+  - 'ntp3.*.com'
+  - 'ntp4.*.com'
+  - 'ntp5.*.com'
+  - 'ntp6.*.com'
+  - 'ntp7.*.com'
+  - '*.time.edu.cn'
+  - '*.ntp.org.cn'
+  - '+.pool.ntp.org'
+  - 'time1.cloud.tencent.com'
+  - '+.music.163.com'
+  - '*.126.net'
+  - 'musicapi.taihe.com'
+  - 'music.taihe.com'
+  - 'songsearch.kugou.com'
+  - 'trackercdn.kugou.com'
+  - '*.kuwo.cn'
+  - 'api-jooxtt.sanook.com'
+  - 'api.joox.com'
+  - 'joox.com'
+  - '+.y.qq.com'
+  - '+.music.tc.qq.com'
+  - 'aqqmusic.tc.qq.com'
+  - '+.stream.qqmusic.qq.com'
+  - '*.xiami.com'
+  - '+.music.migu.cn'
+  - '+.srv.nintendo.net'
+  - '+.playstation.net'
+  - '+.playstation.com'
+  - '+.stun.playstation.net'
+  - 'xbox.*.microsoft.com'
+  - '+.xboxlive.com'
+  - 'localhost.ptlogin2.qq.com'
+  - 'proxy.golang.org'
+  - 'stun.*.*'
+  - 'stun.*.*.*'
+  - '*.mcdn.bilivideo.cn'
+  - '*.bilibili.com'
+  - '*.1huizhan.com'
+  - '*.3.cn'
+  - '*.300hu.com'
+  - '*.360buy.cn'
+  - '*.360buy.com'
+  - '*.360buy.com.cn'
+  - '*.360buyimg.com'
+  - '*.360buyinternational.com'
+  - '*.360top.com'
+  - '*.jd.com'
   nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.adguard.com/dns-query
-  fallback:
-    - tls://8.8.8.8:853
-    - tls://1.1.1.1:853
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.adguard.com/dns-query
-  proxy-server-nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.adguard.com/dns-query
-  fallback-filter:
-    geoip: true
-    ipcidr:
-      - 240.0.0.0/4
-      - 0.0.0.0/32
+  - 114.114.114.114
+  - 8.8.8.8
+  - 223.5.5.5
+  - 119.29.29.29
+  - tls://223.5.5.5:853
+  - tls://119.29.29.29:853
+  - tls://114.114.114.114:853
+  - tls://8.8.8.8:853
+  - https://doh.pub/dns-query
+  - https://dns.alidns.com/dns-query#h3=true
+
 
 proxies:
   - {name: "☁️ CFWarp-A",type: wireguard,server: 162.159.192.100,port: 4198, ip: 172.16.0.2, ipv6: 2606:4700:110:8805:b26f:5e76:5e3:ab74/128,private-key: IOyp1AbuSi9Z1d4WtSR43VPWHcIgFHeC8NPUtMw43Vg=,public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, reserved: [111,49,140], keepalive: 45, mtu: 1280, udp: true}
