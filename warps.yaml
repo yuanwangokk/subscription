@@ -14,16 +14,7 @@ dns:
   - 223.5.5.5
   - 119.29.29.29
   - 114.114.114.114
-  - 208.67.222.222
-  - 208.67.220.220
-  - 208.67.222.220
-  - 208.67.220.222
-  - https://doh.pub/dns-query
-  - https://dns.alidns.com/dns-query
-  - https://dns.google/dns-query
-  - https://cloudflare-dns.com/dns-query
-  - https://doh.opendns.com/dns-query
-  fake-ip-range: 172.16.0.2/32
+  fake-ip-range: 172.16.0.2/16
   enhanced-mode: redir-host
   fake-ip-filter:   
   - '*.lan'
