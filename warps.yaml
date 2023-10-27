@@ -1,11 +1,12 @@
-mode: rule
-ipv6: true
-log-level: info
-allow-lan: false
-mixed-port: 7890
-unified-delay: false
-tcp-concurrent: true
-
+mixed-port: 7890 
+bind-address: '*' 
+allow-lan: true 
+mode: rule 
+log-level: info 
+external-controller: 0.0.0.0:9090 
+find-process-mode: strict   
+tcp-concurrent: true 
+ipv6: false 
 dns:
   enable: true
   prefer-h3: true
