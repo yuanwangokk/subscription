@@ -109,8 +109,7 @@ dns:
 
 
 proxies:
-  - {
-    name: "warp1"
+  - name: "warp1"
     type: wireguard
     server: 162.159.192.178
     port: 945
@@ -122,12 +121,10 @@ proxies:
     reserved: [203,146,161]
     keepalive: 45 
     mtu: 1280
-    }
     
 
     
-  - {
-    name: "warp"
+  - name: "warp"
     type: wireguard
     server: 162.159.192.178
     port: 945
@@ -139,7 +136,6 @@ proxies:
     reserved: [203,146,161]
     keepalive: 45 
     mtu: 1280
-    }
     
 
 
