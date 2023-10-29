@@ -12,7 +12,7 @@ dns:
   enable: true
   listen: 127.0.0.1:5335
   use-hosts: true
-  default-nameserver: [223.5.5.5, 119.29.29.29]
+  default-nameserver: [114.114.114.114, 8.8.8.8]
   ipv6: false
   enhanced-mode: redir-host
   fake-ip-filter: ["*.n.n.srv.nintendo.net", +.stun.playstation.net, xbox.*.*.microsoft.com, "*.msftncsi.com", "*.msftconnecttest.com", WORKGROUP, "*.lan", stun.*.*.*, stun.*.*, time.windows.com, time.nist.gov, time.apple.com, time.asia.apple.com, "*.ntp.org.cn", "*.openwrt.pool.ntp.org", time1.cloud.tencent.com, time.ustc.edu.cn, pool.ntp.org, ntp.ubuntu.com, "*.*.xboxlive.com", speedtest.cros.wr.pvp.net]
