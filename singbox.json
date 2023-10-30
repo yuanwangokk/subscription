@@ -1,38 +1,66 @@
-
-
 {
   "dns": {
     "servers": [
       {
         "tag":"google",
-	  "address":"tls://8.8.8.8",
+        "address":"tls://8.8.4.4",
         "detour":"wireguard-out"
       },
       {
         "tag":"local",
-        "address":"114.114.114.114",
+        "address":"223.5.5.5",
         "detour":"direct"
       }
+    ],
+    "rules":[
+      {
+        "domain":"servername.com",
+        "geosite":"cn",
+        "server":"local"
+      }
     ]
-			},	
-"inbounds":[
-		    {
+  },
+  "route":{
+    "geoip":{
+      "download_url":"https://github.sock.cf/SagerNet/sing-geoip/releases/latest/download/geoip.db",
+      "download_detour":"direct"
+    },
+    "geosite":{
+      "download_url":"https://github.sock.cf/SagerNet/sing-geosite/releases/latest/download/geosite.db",
+      "download_detour":"direct"
+    },
+    "rules":[
+      {
+        "geosite":[
+          "openai"
+        ],
+        "outbound":"warp-IPv6-out"
+      },
+      {
+        "geosite":"cn",
+        "geoip":"cn",
+        "outbound":"direct"
+      }
+    ]
+  },
+  "inbounds":[
+    {
       "type": "mixed",
       "listen":"::",
       "listen_port":1080
-			},
-		{
+    },
+    {
       "type": "vmess",
       "tag": "vmess-in",
       "listen": "::",
-      "listen_port": 2001,
+      "listen_port": 2000,
       "users": [
         {
           "name": "sekai",
           "uuid": "11112222-3333-4444-aaaa-bbbbccccdddd",
           "alterId": 0
         }
-				],
+      ],
       "tls": {},
       "transport": {
         "type": "ws",
@@ -40,20 +68,20 @@
         "headers": {},
         "max_early_data": 0,
         "early_data_header_name": "Sec-WebSocket-Protocol"
-					}
-		},
-		
-				{
+      }
+    },
+	
+	    {
       "type": "vless",
       "tag": "vless-in",
       "listen": "::",
-      "listen_port": 2002,
+      "listen_port": 2001,
       "users": [
         {
-          "name": "sek",
-          "uuid": "11112222-3333-4444-aaaa-bbbbccccdddd"  
+          "name": "admin",
+          "uuid": "11112222-3333-4444-aaaa-bbbbccccdddd"
         }
-				],
+      ],
       "tls": {},
       "transport": {
         "type": "ws",
@@ -61,32 +89,33 @@
         "headers": {},
         "max_early_data": 0,
         "early_data_header_name": "Sec-WebSocket-Protocol"
-					}
-		},
+      }
+    },
 
-		
+	
 	{
+		"type":"socks",
 		"listen":"::",
-		"listen_port":2000,
-		"type":"socks"
+		"listen_port":2002
+		
 	}
-			],
-"outbounds":[
+  ],
+  "outbounds":[
     {
       "type":"wireguard",
       "tag":"wireguard-out",
-      "server":"162.159.192.100",
-      "server_port":4198,
+      "server":"162.159.195.10",
+      "server_port":1701,
       "local_address":[
         "172.16.0.2/32",
-        "2606:4700:110:8d96:10c5:f63:c86a:d18/128"
+        "2606:4700:110:8516:6a11:1c4b:6b82:eda9/128"
       ],
-      "private_key":"YNddtyMhBktWpMua1NCCMYL2vyMzL1+7D2J5PRCtnnQ=",
+      "private_key":"8GshjXjIU4NHCLYEUjAgt92GO2E6DEjBQmKQgXw5Jlo=",
       "peer_public_key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved":[
-        64,
-        150,
-        182
+        207,
+        60,
+        136
       ],
       "mtu":1280
     },
