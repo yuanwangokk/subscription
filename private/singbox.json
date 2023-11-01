@@ -148,18 +148,18 @@
 {
 "tag": "proxy",
 "type":"wireguard",
-"server":"162.159.192.20",
-"server_port":2371,
+"server":"162.159.195.121",
+"server_port":955,
 "local_address":[
 "172.16.0.2/32",
-"2606:4700:110:8225:da9f:4068:bf84:4e42/128"
+"2606:4700:110:8f4b:57c2:ad9a:3ad5:4bfe/128"
 ],
-"private_key":"wPP7CA+lcJ19zGd6v8AjWVpPhsuE2t9h2BFzdLIsd28=",
+"private_key":"GIV6dbNp+9OZUYESwpbi7ZJR/ERsOzbrYeePmxiKtG8=",
 "peer_public_key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
 "reserved":[
-166,
-99,
-116
+103,
+169,
+118
 ],
 "mtu":1280
 },
