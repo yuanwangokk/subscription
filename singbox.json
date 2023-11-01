@@ -8,7 +8,7 @@
       },
       {
         "tag":"local",
-        "address":"223.5.5.5",
+        "address":"1.1.1.1",
         "detour":"direct"
       }
     ],
