@@ -3,7 +3,7 @@
     "servers": [
       {
         "tag":"google",
-        "address":"tls://8.8.4.4",
+        "address":"tls://1.1.1.1",
         "detour":"wireguard-out"
       },
       {
