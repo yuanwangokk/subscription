@@ -7,14 +7,14 @@
         "servers": [
             {
                 "tag": "dns_proxy",
-                "address": "https://cloudflare-dns.com/dns-query",
+                "address": "https://1.1.1.1/dns-query",
                 "address_resolver": "dns_resolver",
                 "strategy": "ipv4_only",
                 "detour": "proxy"
             },
             {
                 "tag": "dns_direct",
-                "address": "h3://cloudflare-dns.com/dns-query",
+                "address": "h3://dns.alidns.com/dns-query",
                 "address_resolver": "dns_resolver",
                 "strategy": "ipv4_only",
                 "detour": "direct"
