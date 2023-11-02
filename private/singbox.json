@@ -14,7 +14,7 @@
             },
             {
                 "tag": "dns_direct",
-                "address": "h3://dns.alidns.com/dns-query",
+                "address": "h3:cloudflare-dns.com/dns-query",
                 "address_resolver": "dns_resolver",
                 "strategy": "ipv4_only",
                 "detour": "direct"
@@ -25,7 +25,7 @@
             },
             {
                 "tag": "dns_resolver",
-                "address": "https://dns.google/dns-query",
+                "address": "1.1.1.1",
                 "strategy": "ipv4_only",
                 "detour": "direct"
             }
