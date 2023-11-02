@@ -7,14 +7,14 @@
         "servers": [
             {
                 "tag": "dns_proxy",
-                "address": "https://1.1.1.1/dns-query",
+                "address": "1.1.1.1",
                 "address_resolver": "dns_resolver",
                 "strategy": "ipv4_only",
                 "detour": "proxy"
             },
             {
                 "tag": "dns_direct",
-                "address": "h3://dns.alidns.com/dns-query",
+                "address": "223.5.5.5",
                 "address_resolver": "dns_resolver",
                 "strategy": "ipv4_only",
                 "detour": "direct"
