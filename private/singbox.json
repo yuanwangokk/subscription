@@ -7,7 +7,7 @@
         "servers": [
             {
                 "tag": "dns_proxy",
-                "address": "https://8.8.8.8/dns-query",
+                "address": "https://cloudflare-dns.com/dns-query",
                 "address_resolver": "dns_resolver",
                 "strategy": "ipv4_only",
                 "detour": "proxy"
@@ -25,7 +25,7 @@
             },
             {
                 "tag": "dns_resolver",
-                "address": "8.8.8.8",
+                "address": "https://dns.google/dns-query",
                 "strategy": "ipv4_only",
                 "detour": "direct"
             }
