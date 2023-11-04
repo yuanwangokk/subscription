@@ -1,105 +1,31 @@
-mixed-port: 7890
-bind-address: '*'
+port: 7890
+socks-port: 7891
 allow-lan: true
-mode: rule
+mode: Rule
 log-level: info
-external-controller: 0.0.0.0:9090
-find-process-mode: strict
-tcp-concurrent: true
-ipv6: false
-geodata-mode: true
-  profile:
-    store-selected: true
-    store-fake-ip: false
+external-controller: :9090
 dns:
-    enable: true
-    prefer-h3: true
-    listen: 0.0.0.0:53
-    default-nameserver:
-        - system
-        - 223.5.5.5
-    enhanced-mode: fake-ip
-    fake-ip-range: 198.18.0.1/16
-    fake-ip-filter:
-        - '*.lan'
-        - '*.battlenet.com.cn'
-        - '*.battlenet.com'
-        - '*.blzstatic.cn'
-        - '*.battle.net'
-        - '*.linksys.com'
-        - '*.linksyssmartwifi.com'
-        - 'swscan.apple.com'
-        - 'mesu.apple.com'
-        - '*.msftconnecttest.com'
-        - '*.msftncsi.com'
-        - 'time.*.com'
-        - 'time.*.gov'
-        - 'time.*.edu.cn'
-        - 'time.*.apple.com'
-        - 'time1.*.com'
-        - 'time2.*.com'
-        - 'time3.*.com'
-        - 'time4.*.com'
-        - 'time5.*.com'
-        - 'time6.*.com'
-        - 'time7.*.com'
-        - 'ntp.*.com'
-        - 'ntp.*.com'
-        - 'ntp1.*.com'
-        - 'ntp2.*.com'
-        - 'ntp3.*.com'
-        - 'ntp4.*.com'
-        - 'ntp5.*.com'
-        - 'ntp6.*.com'
-        - 'ntp7.*.com'
-        - '*.time.edu.cn'
-        - '*.ntp.org.cn'
-        - '+.pool.ntp.org'
-        - 'time1.cloud.tencent.com'
-        - '+.music.163.com'
-        - '*.126.net'
-        - 'musicapi.taihe.com'
-        - 'music.taihe.com'
-        - 'songsearch.kugou.com'
-        - 'trackercdn.kugou.com'
-        - '*.kuwo.cn'
-        - 'api-jooxtt.sanook.com'
-        - 'api.joox.com'
-        - 'joox.com'
-        - '+.y.qq.com'
-        - '+.music.tc.qq.com'
-        - 'aqqmusic.tc.qq.com'
-        - '+.stream.qqmusic.qq.com'
-        - '*.xiami.com'
-        - '+.music.migu.cn'
-        - '+.srv.nintendo.net'
-        - '+.playstation.net'
-        - '+.playstation.com'
-        - '+.stun.playstation.net'
-        - 'xbox.*.microsoft.com'
-        - '+.xboxlive.com'
-        - 'localhost.ptlogin2.qq.com'
-        - 'proxy.golang.org'
-        - 'stun.*.*'
-        - 'stun.*.*.*'
-        - '*.mcdn.bilivideo.cn'
-        - '*.bilibili.com'
-        - '*.1huizhan.com'
-        - '*.3.cn'
-        - '*.300hu.com'
-        - '*.360buy.cn'
-        - '*.360buy.com'
-        - '*.360buy.com.cn'
-        - '*.360buyimg.com'
-        - '*.360buyinternational.com'
-        - '*.360top.com'
-        - '*.jd.com'
-    nameserver:
-        - system
-        - 223.5.5.5
-        - 114.114.114.114
-        - https://dns.alidns.com/dns-query#h3=true
-        - https://doh.pub/dns-query
+  enable: true
+  prefer-h3: true
+  ipv6: true
+  listen: 0.0.0.0:1053
+  use-hosts: true
+  fake-ip-range: 198.18.0.1/16
+  enhanced-mode: redir-host
+  fake-ip-filter: ['+.*']
+  default-nameserver:
+    - https://223.5.5.5/dns-query
+    - https://1.12.12.12/dns-query
+  nameserver:
+    - tls://dns.google
+    - https://cloudflare-dns.com/dns-query
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  nameserver-policy:
+    'rule-set:microsoft-cn,apple-cn,google-cn,games-cn': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
+    'rule-set:cn,private': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
+
   
 proxies:
   - name: "warps"
