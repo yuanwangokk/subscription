@@ -22,9 +22,6 @@ dns:
   proxy-server-nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-  nameserver-policy:
-    'rule-set:microsoft-cn,apple-cn,google-cn,games-cn': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
-    'rule-set:cn,private': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
 
   
 proxies:
