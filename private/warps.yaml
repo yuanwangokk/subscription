@@ -6,7 +6,7 @@ log-level: info
 external-controller: :9090
 dns:
   enabled: true
-  enhanced-mode: fake-ip
+  enhanced-mode: redir-host
   
 proxies:
   - name: "warp1"
