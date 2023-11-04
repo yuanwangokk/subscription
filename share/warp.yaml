@@ -6,7 +6,7 @@ sniffer:
 log-level: info
 external-controller: 127.0.0.1:9090
 clash-for-android:
-    append-system-dns: false
+    append-system-dns: true
 hosts:
   mtalk.google.com: 108.177.125.188
 dns:
