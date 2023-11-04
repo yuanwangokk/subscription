@@ -11,7 +11,7 @@ dns:
   listen: 0.0.0.0:1053
   use-hosts: true
   fake-ip-range: 198.18.0.1/16
-  enhanced-mode: redir-host
+  enhanced-mode: fake-ip
   fake-ip-filter: ['+.*']
   default-nameserver:
     - https://223.5.5.5/dns-query
@@ -22,6 +22,9 @@ dns:
   proxy-server-nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
+  nameserver-policy:
+    'rule-set:microsoft-cn,apple-cn,google-cn,games-cn': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
+    'rule-set:cn,private': [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
 
   
 proxies:
