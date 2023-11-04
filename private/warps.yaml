@@ -8,10 +8,6 @@ find-process-mode: strict
 tcp-concurrent: true
 ipv6: false
 geodata-mode: true
-geox-url:
-    geoip: "https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
-    geosite: "https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
-   mmdb: "https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
   profile:
     store-selected: true
     store-fake-ip: false
