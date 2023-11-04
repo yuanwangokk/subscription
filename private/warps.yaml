@@ -4,6 +4,9 @@ allow-lan: true
 mode: Rule
 log-level: info
 external-controller: :9090
+dns:
+  enabled: true
+  enhanced-mode: fake-ip
   
 proxies:
   - name: "warp1"
