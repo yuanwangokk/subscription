@@ -148,8 +148,8 @@
 {
 "tag": "proxy",
 "type":"wireguard",
-"server":"162.159.195.176",
-"server_port":943,
+"server":"162.159.195.169",
+"server_port":945,
 "local_address":[
 "172.16.0.2/32",
 "2606:4700:110:8f4b:57c2:ad9a:3ad5:4bfe/128"
