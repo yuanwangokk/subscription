@@ -6,7 +6,7 @@ log-level: info
 external-controller: :9090
 dns:
   enable: true
-  listen: :53
+  listen: 127.0.0.1:53
   ipv6: true
   enhanced-mode: redir-host
   fake-ip-range: 198.18.0.1/16
