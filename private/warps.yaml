@@ -31,8 +31,8 @@ dns:
 proxies:
   - name: "warps"
     type: wireguard
-    server: 162.159.192.178
-    port: 945
+    server: 162.159.192.101
+    port: 894
     ip: "172.16.0.2/32"
     ipv6: "2606:4700:110:8757:e078:93e3:c706:cb1f/128"
     private-key: "UAUwRD2SPBoCSTaFJSFwe9SEOA7TiSqd0+9S5zJtHkw="
@@ -46,8 +46,8 @@ proxies:
     
   - name: "warp"
     type: wireguard
-    server: 162.159.192.178
-    port: 945
+    server: 162.159.192.101
+    port: 894
     ip: "172.16.0.2/32"
     ipv6: "2606:4700:110:8757:e078:93e3:c706:cb1f/128"
     private-key: "UAUwRD2SPBoCSTaFJSFwe9SEOA7TiSqd0+9S5zJtHkw="
