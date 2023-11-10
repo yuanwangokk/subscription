@@ -28,7 +28,22 @@ dns:
 
   
 proxies:
-  - name: "warps"
+  - name: "1"
+    type: wireguard
+    server: 162.159.192.105
+    port: 7156
+    ip: "172.16.0.2/32"
+    ipv6: "2606:4700:110:87f0:580c:d3d7:8ec2:badf/128"
+    private-key: "GG+tDvUDbsrdnerCIeXofKLzvnmnS1OAmUl8EB3DVV4="
+    public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+    udp: true
+    reserved: [97,251,242]
+    keepalive: 45 
+    mtu: 1280
+    
+
+    
+  - name: "2"
     type: wireguard
     server: 162.159.192.105
     port: 7156
@@ -42,20 +57,50 @@ proxies:
     mtu: 1280
     
 
-    
-  - name: "warp"
+
+  - name: "3"
     type: wireguard
     server: 162.159.192.105
     port: 7156
     ip: "172.16.0.2/32"
-    ipv6: "2606:4700:110:8757:e078:93e3:c706:cb1f/128"
-    private-key: "UAUwRD2SPBoCSTaFJSFwe9SEOA7TiSqd0+9S5zJtHkw="
+    ipv6: "2606:4700:110:8038:4475:e768:f92a:4688/128"
+    private-key: "iJmirzcURCTexX7DDz+f9y0h5LcKxKMlzV9oTaTkmWY="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
     udp: true
-    reserved: [203,146,161]
+    reserved: [27,252,132]
     keepalive: 45 
     mtu: 1280
-    
+
+
+
+  - name: "4"
+    type: wireguard
+    server: 162.159.192.105
+    port: 7156
+    ip: "172.16.0.2/32"
+    ipv6: "2606:4700:110:8aba:77cb:243f:f108:49ef/128"
+    private-key: "GEJzY/PnAogir5NBjgdn1P1ocSSj07Lf9/IPm/JgzEE="
+    public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+    udp: true
+    reserved: [188,215,111]
+    keepalive: 45 
+    mtu: 1280
+
+
+
+
+  - name: "5"
+    type: wireguard
+    server: 162.159.192.105
+    port: 7156
+    ip: "172.16.0.2/32"
+    ipv6: "2606:4700:110:8f29:4fe:e5c9:5353:69a5/128"
+    private-key: "cNmBKSj47d7UiD0aUJBJ15lwe8Iz96nHvVrsboCO5Ug="
+    public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+    udp: true
+    reserved: [146,205,196]
+    keepalive: 45 
+    mtu: 1280
 
 
 proxy-groups:
@@ -63,8 +108,11 @@ proxy-groups:
     type: select
     proxies:
       - ♻️ 自动选择
-      - warps
-      - warp
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
       - DIRECT
   - name: ♻️ 自动选择
     type: url-test
@@ -72,23 +120,32 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - warps
-      - warp
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - warps
-      - warp
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - warps
-      - warp
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
@@ -127,8 +184,11 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - warps
-      - warp
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
