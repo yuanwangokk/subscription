@@ -8,7 +8,7 @@ dns:
   enable: true
   listen: :53
   ipv6: true
-  enhanced-mode: fake-ip
+  enhanced-mode: redir-host
   fake-ip-range: 198.18.0.1/16
   default-nameserver: 
     - 223.5.5.5
