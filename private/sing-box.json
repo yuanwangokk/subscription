@@ -105,14 +105,14 @@
     ],
     "outbounds": [
         {
-            		      "tag": "proxy"
-			      "type":"wireguard",
-			      "server":"162.159.195.169",
-			      "server_port":945,
-			      "local_address":[
-			      "172.16.0.2/32",
-			      "2606:4700:110:8ccd:bf44:18f3:c723:5dd8/128"
-							],
+            		"tag": "proxy"
+			"type":"wireguard",
+			"server":"162.159.195.169",
+			"server_port":945,
+			"local_address":[
+			"172.16.0.2/32",
+			"2606:4700:110:8ccd:bf44:18f3:c723:5dd8/128"
+					],
 			"private_key":"sFHHiQIbGCiRxquh5jMnYGzeZDnUbQJMYFSdub2KfGQ=",
 			"peer_public_key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
 			"reserved":[
