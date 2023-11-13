@@ -105,7 +105,7 @@
     ],
     "outbounds": [
         {
-            		"tag": "proxy",
+            "tag": "proxy",
 			"type":"wireguard",
 			"server":"162.159.195.169",
 			"server_port":945,
