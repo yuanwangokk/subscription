@@ -1,0 +1,46 @@
+hysteria-1
+bash <(curl -fsSL https://git.io/hysteria.sh)
+
+
+hysteria-2
+wget -N --no-check-certificate https://raw.githubusercontent.com/Misaka-blog/hysteria-install/main/hy2/hysteria.sh && bash hysteria.sh
+
+
+
+流媒体检测
+bash <(curl -L -s check.unlock.media)
+
+
+
+流媒体解锁脚本
+bash <(curl -sSL https://gitlab.com/fscarmen/warp_unlock/-/raw/main/unlock.sh)
+
+
+
+
+xui
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+
+
+
+argo
+bash <(wget -qO- https://raw.githubusercontent.com/fscarmen/argox/main/argox.sh)
+
+
+
+
+
+科技lioN
+curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh && chmod +x kejilion.sh && ./kejilion.sh
+
+
+vps融合怪
+curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh
+
+
+
+ubuntu/debian 系统安装 Curl 方法: apt-get update -y && apt-get install curl -y
+centos 系统安装 Curl 方法: yum update -y && yum install curl -y%0D%0A安装好 curl 之后就能安装脚本了
+
+调用ipv6
+bash <(curl -Lso- https://sh.vps.dance/ip46.sh)
