@@ -5,47 +5,35 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: ex140-Vl, server: www.who.int, port: 443, client-fingerprint: chrome, type: vless, uuid: 7ffa888c-f2fa-496b-b1eb-761216716b41, tls: true, tfo: false, servername: bra-inbox-particularly-bind.trycloudflare.com, skip-cert-verify: true, network: ws, ws-opts: {path: "/argox-vl?ed=2048", headers: {Host: bra-inbox-particularly-bind.trycloudflare.com}}, udp: true}
-  - {name: ex140-Vm, server: www.who.int, port: 443, client-fingerprint: chrome, type: vmess, uuid: 7ffa888c-f2fa-496b-b1eb-761216716b41, alterId: 0, cipher: auto, tls: true, tfo: false, skip-cert-verify: true, servername: bra-inbox-particularly-bind.trycloudflare.com, network: ws, ws-opts: {path: "/argox-vm?ed=2048", headers: {Host: bra-inbox-particularly-bind.trycloudflare.com}}, udp: true}
-  - {name: ex16-Vl, server: www.who.int, port: 443, client-fingerprint: chrome, type: vless, uuid: 4223f3fe-518c-4c5e-a77e-0f6f20cfcbf4, tls: true, tfo: false, servername: chamber-resource-ghz-craps.trycloudflare.com, skip-cert-verify: true, network: ws, ws-opts: {path: "/argox-vl?ed=2048", headers: {Host: chamber-resource-ghz-craps.trycloudflare.com}}, udp: true}
-  - {name: ex16-Vm, server: www.who.int, port: 443, client-fingerprint: chrome, type: vmess, uuid: 4223f3fe-518c-4c5e-a77e-0f6f20cfcbf4, alterId: 0, cipher: auto, tls: true, tfo: false, skip-cert-verify: true, servername: chamber-resource-ghz-craps.trycloudflare.com, network: ws, ws-opts: {path: "/argox-vm?ed=2048", headers: {Host: chamber-resource-ghz-craps.trycloudflare.com}}, udp: true}
-  - {name: ex29-Vl, server: www.who.int, port: 443, client-fingerprint: chrome, type: vless, uuid: 20bb764a-56fa-430a-bee0-18da291fcb34, tls: true, tfo: false, servername: packages-indicates-area-somewhat.trycloudflare.com, skip-cert-verify: true, network: ws, ws-opts: {path: "/argox-vl?ed=2048", headers: {Host: packages-indicates-area-somewhat.trycloudflare.com}}, udp: true}
-  - {name: ex29-Vm, server: www.who.int, port: 443, client-fingerprint: chrome, type: vmess, uuid: 20bb764a-56fa-430a-bee0-18da291fcb34, alterId: 0, cipher: auto, tls: true, tfo: false, skip-cert-verify: true, servername: packages-indicates-area-somewhat.trycloudflare.com, network: ws, ws-opts: {path: "/argox-vm?ed=2048", headers: {Host: packages-indicates-area-somewhat.trycloudflare.com}}, udp: true}
+  - {name: ex16-Vl, server: www.who.int, port: 443, client-fingerprint: chrome, type: vless, uuid: 7ee1e9c9-6f47-4fba-8c5b-8082dcd93df9, tls: true, tfo: false, servername: a.mlldxes.eu.org, skip-cert-verify: true, network: ws, ws-opts: {path: "/argox-vl?ed=2048", headers: {Host: a.mlldxes.eu.org}}, udp: true}
+  - {name: ex29-Vl, server: www.who.int, port: 443, client-fingerprint: chrome, type: vless, uuid: 4e775c2b-d041-48b3-ba21-c48c88ca33bb, tls: true, tfo: false, servername: b.mlldxes.eu.org, skip-cert-verify: true, network: ws, ws-opts: {path: "/argox-vl?ed=2048", headers: {Host: b.mlldxes.eu.org}}, udp: true}
+  - {name: ex140-Vl, server: www.who.int, port: 443, client-fingerprint: chrome, type: vless, uuid: 0b6e5449-8853-4e6c-9f15-1311ed0c0d22, tls: true, tfo: false, servername: c.mlldxes.eu.org, skip-cert-verify: true, network: ws, ws-opts: {path: "/argox-vl?ed=2048", headers: {Host: c.mlldxes.eu.org}}, udp: true}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - 🎯 全球直连
-      - ex140-Vl
-      - ex140-Vm
       - ex16-Vl
-      - ex16-Vm
       - ex29-Vl
-      - ex29-Vm
+      - ex140-Vl
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - ex140-Vl
-      - ex140-Vm
       - ex16-Vl
-      - ex16-Vm
       - ex29-Vl
-      - ex29-Vm
+      - ex140-Vl
   - name: 🎥 NETFLIX
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - ex140-Vl
-      - ex140-Vm
       - ex16-Vl
-      - ex16-Vm
       - ex29-Vl
-      - ex29-Vm
+      - ex140-Vl
   - name: ⛔️ 广告拦截
     type: select
     proxies:
@@ -64,12 +52,9 @@ proxy-groups:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - ex140-Vl
-      - ex140-Vm
       - ex16-Vl
-      - ex16-Vm
       - ex29-Vl
-      - ex29-Vm
+      - ex140-Vl
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -80,35 +65,26 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
-      - ex140-Vl
-      - ex140-Vm
       - ex16-Vl
-      - ex16-Vm
       - ex29-Vl
-      - ex29-Vm
+      - ex140-Vl
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
-      - ex140-Vl
-      - ex140-Vm
       - ex16-Vl
-      - ex16-Vm
       - ex29-Vl
-      - ex29-Vm
+      - ex140-Vl
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - ex140-Vl
-      - ex140-Vm
       - ex16-Vl
-      - ex16-Vm
       - ex29-Vl
-      - ex29-Vm
+      - ex140-Vl
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -124,12 +100,9 @@ proxy-groups:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - ex140-Vl
-      - ex140-Vm
       - ex16-Vl
-      - ex16-Vm
       - ex29-Vl
-      - ex29-Vm
+      - ex140-Vl
 rules:
   - DOMAIN-SUFFIX,local,🎯 全球直连
   - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
