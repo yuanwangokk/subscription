@@ -9,14 +9,14 @@
                 "tag": "dns_proxy",
                 "address": "https://1.1.1.1/dns-query",
                 "address_resolver": "dns_resolver",
-                "strategy": "ipv4_only", // 若两端准备好了IPv6，可改为 "prefer_ipv6"
+                "strategy": "ipv4_only",
                 "detour": "proxy"
             },
             {
                 "tag": "dns_direct",
                 "address": "https://dns.alidns.com/dns-query",
                 "address_resolver": "dns_resolver",
-                "strategy": "ipv4_only", // 若两端准备好了IPv6，可改为 "prefer_ipv6"
+                "strategy": "ipv4_only",
                 "detour": "direct"
             },
             {
@@ -113,34 +113,22 @@
     ],
     "outbounds": [
         {
-            "tag": "proxy"
-            "inbounds":[
-		{
-			"listen":"127.0.0.1",
-			"listen_port":2000,
-			"udp_timeout":300,
-			"type":"socks"
-		}
-						],
-			"outbounds":[
-		{
+            "tag": "proxy",
 			"type":"wireguard",
 			"server":"162.159.192.169",
 			"server_port":2506,
 			"local_address":[
 			"172.16.0.2/32",
-			"2606:4700:110:8658:53bd:c84d:bdaf:51e7/128"
+			"2606:4700:110:8ad7:14c2:3815:df53:31d3/128"
 							],
-			"private_key":"QMdtGlGTzId6HU+YrpLcWz9I4YT9zUWNBpOCBVReuGQ=",
+			"private_key":"KODMTIV242d2ii35hHYoU7dxlQVnQmyCmt8TBcsn/Eg=",
 			"peer_public_key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
 			"reserved":[
-			169,
-			190,
-			59
-						],
-			"mtu":1280
-		}
-						]
+			104,
+			94,
+			183
+			],
+			"mtu":1280,
         },
         {
             "type": "direct",
