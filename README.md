@@ -16,7 +16,7 @@ cloudflare邮箱：yuanwangokk@proton.me
 
 订阅链接    https://gh-proxy.com/https://github.com/yuanwangokk/subscription/blob/main/share/warp.yaml
 
-订阅链接   https://gh-proxy.com/https://github.com/yuanwangokk/subscription/blob/main/share/singbox.json 
+订阅链接   https://gh-proxy.com/https://github.com/yuanwangokk/subscription/blob/main/share/singbox_android.json
 
 =====================================================
 
