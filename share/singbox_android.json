@@ -7,7 +7,7 @@
         "servers": [
             {
                 "tag": "dns_proxy",
-                "address": "https://1.1.1.1/dns-query",
+                "address": "https://8.8.8.8/dns-query",
                 "address_resolver": "dns_resolver",
                 "strategy": "ipv4_only",
                 "detour": "proxy"
@@ -115,8 +115,8 @@
         {
             "tag": "proxy",
 			"type":"wireguard",
-			"server":"162.159.192.169",
-			"server_port":2506,
+			"server":"162.159.192.22",
+			"server_port":854,
 			"local_address":[
 			"172.16.0.2/32",
 			"2606:4700:110:8ad7:14c2:3815:df53:31d3/128"
