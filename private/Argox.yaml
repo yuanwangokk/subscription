@@ -106,7 +106,7 @@ proxies:
   port: 443                                        #自定义的端口
   uuid: 05ffbcfc-c831-4027-95b8-1c7a0b51f4ad       #自定义的uuid
   udp: true
-  tls: false
+  tls: true
   network: ws
   servername: qw.mlldxes.eu.org                    #sni域名，与下面的host一致
   ws-opts:
@@ -287,7 +287,7 @@ proxy-groups:
 - name: 🌍选择代理节点
   type: select
   proxies:
-    - 负载均衡                                        #自定义添加协议的name字段
+    - 负载均衡                                            #自定义添加协议的name字段
     - 自动选择
     - DIRECT
     - warp-wireguard		                              #自定义添加协议的name字段
