@@ -254,11 +254,25 @@ proxies:
   server: 162.159.192.169                                    #可自定义优选对端IP，与下面port的端口相对应
   port: 2506                                                 #可自定义优选对端IP，与上面server的IP相对应
   ip: 172.16.0.2/32
-  ipv6: 2606:4700:110:87f0:580c:d3d7:8ec2:badf/128           #与private-key相对应，如删除本行，表示仅IPV4
-  public-key: GG+tDvUDbsrdnerCIeXofKLzvnmnS1OAmUl8EB3DVV4=
+  ipv6: 2606:4700:110:8b12:4e79:a350:1b1b:f6e5/128           #与private-key相对应，如删除本行，表示仅IPV4
+  public-key: OFWdULhLj+1t7JimGKh5ElWvry+TFh94wAoUmICwykU=
   private-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=  #获取private-key，私key
   udp: true
-  reserved: [97,251,242]
+  reserved: [248,158,77]
+  keepalive: 45 
+  mtu: 1280
+
+#==============================（warp-wireguard节点）  
+- name: warp-wireguard2                                       #可自定义名称
+  type: wireguard         
+  server: 162.159.192.169                                    #可自定义优选对端IP，与下面port的端口相对应
+  port: 2506                                                 #可自定义优选对端IP，与上面server的IP相对应
+  ip: 172.16.0.2/32
+  ipv6: 2606:4700:110:8645:e21a:396a:8e6a:a97a/128           #与private-key相对应，如删除本行，表示仅IPV4
+  public-key: uMETWk1LVJY+UcvGmbJLSWSEKTpfw0iONuWOLfEcVFQ=
+  private-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=  #获取private-key，私key
+  udp: true
+  reserved: [181,245,42]
   keepalive: 45 
   mtu: 1280
 
@@ -273,7 +287,9 @@ proxy-groups:
   interval: 300
   strategy: round-robin
   proxies:
-    - warp-wireguard	                                  #自定义添加协议的name字段
+    - warp-wireguard		                              #自定义添加协议的name字段
+    - warp-wireguard2
+    - vless-ws
 
 - name: 自动选择
   type: url-test
@@ -282,15 +298,17 @@ proxy-groups:
   tolerance: 50
   proxies:
     - warp-wireguard		                              #自定义添加协议的name字段
+    - warp-wireguard2
     - vless-ws
     
 - name: 🌍选择代理节点
   type: select
   proxies:
-    - 负载均衡                                            #自定义添加协议的name字段
+    - 负载均衡                                         #自定义添加协议的name字段
     - 自动选择
     - DIRECT
     - warp-wireguard		                              #自定义添加协议的name字段
+    - warp-wireguard2
     - vless-ws
 
 
