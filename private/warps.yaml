@@ -145,10 +145,10 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - 1
-	  - 2
-	  - 3
-	  - 4
-	  - 5
+      - 2
+      - 3
+      - 4
+      - 5
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
