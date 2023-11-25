@@ -27,85 +27,53 @@ dns:
     ipcidr:
       - 240.0.0.0/4
       - 172.16.0.2/32
-	  
 
+      
 proxies:
-	  
-- name: warp-a
-  type: wireguard         
-  server: 188.114.98.125
-  port: 987
-  ip: 172.16.0.2
-  ipv6: 2606:4700:110:86ce:6968:281f:4ef4:53cb
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: oKN5m8YyDqEAvzgD6xD2+vndjwwihrbIub85fQs49kc=
-  udp: true
-  reserved: [37,226,208]
-  keepalive: 45 
-  mtu: 1280
 
-  
-  
-- name: warp-b
-  type: wireguard         
-  server: 188.114.98.244
-  port: 987
-  ip: 172.16.0.2
-  ipv6: 2606:4700:110:85d4:3b1d:bd1a:d89f:1b0
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: wIKq9eXKAoPh8fa+2G5if9c0eBtnk/7OnKpIhExEHUk=
+- name: vless-ws
+  type: vless
+  server: shopify.com
+  port: 443                                        
+  uuid: 05ffbcfc-c831-4027-95b8-1c7a0b51f4ad
   udp: true
-  reserved: [162,191,130]
-  keepalive: 45 
-  mtu: 1280
-  
-  
-- name: warp-c
+  tls: true
+  network: ws
+  servername: qw.mlldxes.eu.org
+  ws-opts:
+    path: "/argox-vl?ed=2048"
+    headers:
+      Host: qw.mlldxes.eu.org
+
+- name: warp-wireguard
   type: wireguard         
   server: 188.114.98.244
   port: 987
   ip: 172.16.0.2
-  ipv6: 2606:4700:110:8e7e:89bb:10c8:b79a:84a7
+  ipv6: 2606:4700:110:8894:a0a0:d05b:4ba2:33c3
   public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: OHDfrXkxtU17LbNuE7T19HeHOf63HIxBgzLelazPEWc=
+  private-key: gNmaRTD1cykSVIJTSpDc1lyBAg78dazfQaJWCxe0bHI=
   udp: true
-  reserved: [177,17,153]
+  reserved: [105,203,198]
   keepalive: 45 
   mtu: 1280
 
-
-
-- name: warp-d
+  
+  
+- name: warp-wireguard2
   type: wireguard         
   server: 188.114.98.244
   port: 987
   ip: 172.16.0.2
-  ipv6: 2606:4700:110:88eb:b5f9:effe:e67a:16b4
+  ipv6: 2606:4700:110:81a4:3b06:8090:d7e2:2780
   public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: YK3hbnAwbiHTKjMPjpZZvYYBxSgE7f3ibgw7phpG4mo=
+  private-key: sLUv2592MqAjLsf11f6jjuDfjSmRPzubkJu5ee9I3Ec=
   udp: true
-  reserved: [200,183,98]
-  keepalive: 45 
-  mtu: 1280
-
-
-
-- name: warp-e
-  type: wireguard         
-  server: 188.114.98.244
-  port: 987
-  ip: 172.16.0.2
-  ipv6: 2606:4700:110:8125:45c7:7b24:b6f8:415a
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: EMeQfQLr03MKuP4ia3MeJPiURakXiAFQq+JxPdIalm0=
-  udp: true
-  reserved: [86,152,15]
+  reserved: [159,211,86]
   keepalive: 45 
   mtu: 1280
   
-  
-  
-	  
+ 
 proxy-groups:
 - name: 负载均衡
   type: load-balance
@@ -113,11 +81,8 @@ proxy-groups:
   interval: 300
   strategy: round-robin
   proxies:
-    - warp-a
-    - warp-b
-	- warp-c
-	- warp-d
-	- warp-e
+    - warp-wireguard
+    - warp-wireguard2
 
 - name: 自动选择
   type: url-test
@@ -125,11 +90,9 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-    - warp-a
-    - warp-b
-	- warp-c
-	- warp-d
-	- warp-e
+    - vless-ws
+    - warp-wireguard
+    - warp-wireguard2
     
 - name: 🌍选择代理节点
   type: select
@@ -137,18 +100,12 @@ proxy-groups:
     - 负载均衡
     - 自动选择
     - DIRECT
-    - warp-a
-    - warp-b
-	- warp-c
-	- warp-d
-	- warp-e
+    - vless-ws
+    - warp-wireguard
+    - warp-wireguard2
 
 
-#（四区）==============================（代理规则）
-#代理规则可自行添加 
 rules:
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
-  - MATCH,🌍选择代理节点
-	  
-	  
+  - MATCH,🌍选择代理节点 
