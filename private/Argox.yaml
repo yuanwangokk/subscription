@@ -1,11 +1,3 @@
-#甬哥Github项目  ：github.com/yonggekkk
-#甬哥Blogger博客 ：ygkkk.blogspot.com
-#甬哥YouTube频道 ：www.youtube.com/@ygkkk
-#====Clash-meta精简配置文件模版：更新至15个主流节点（V23.11.12）=====
-#====参考自clash-meta官方文档：wiki.metacubex.one=====
-
-#（一区）=============================（clash配置）
-#dns可自行修改
 port: 7890
 allow-lan: true
 mode: rule
@@ -27,259 +19,93 @@ dns:
   fallback:
     - https://8.8.8.8/dns-query
     - https://1.1.1.1/dns-query
+    - https://1.0.0.1/dns-query	
     - tls://dns.google
   fallback-filter:
     geoip: true
     geoip-code: CN
     ipcidr:
       - 240.0.0.0/4
+      - 172.16.0.2/32
+	  
 
-
-#（二区）==============================（代理协议）
-#当前12个协议节点配置模版，按需求修改，如某协议节点不用，则无需删除，确保三区代理分流中没有该name节点名称即可
 proxies:
-#==============================（vless-reality-vision节点）
-- name: vless-reality-vision节点               #可自定义名称
-  type: vless
-  server: 1.2.3.4                             #解析的域名或IP
-  port: 12345                                 #自定义的端口
-  uuid: f897325d-053d-45d1-899c-566692331f8   #自定义的uuid
-  network: tcp
+	  
+- name: warp-a
+  type: wireguard         
+  server: 188.114.98.125
+  port: 987
+  ip: 172.16.0.2
+  ipv6: 2606:4700:110:86ce:6968:281f:4ef4:53cb
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  private-key: oKN5m8YyDqEAvzgD6xD2+vndjwwihrbIub85fQs49kc=
   udp: true
-  tls: true
-  flow: xtls-rprx-vision
-  servername: www.yahoo.com                   #自定义的第三方域名
-  reality-opts: 
-    public-key: 4CiE7y7ZPBXIZWzMwphuSH7qdZyisNjD3CDQGjmilmI    #自定义的public-key
-    short-id: a8c031ce                        #自定义的short-id
-  client-fingerprint: chrome                  #自定义的浏览器指纹
+  reserved: [37,226,208]
+  keepalive: 45 
+  mtu: 1280
 
-#==============================（vless-reality-grpc节点）
-- name: vless-reality-grpc节点                  #可自定义名称
-  type: vless
-  server: 1.2.3.4                               #解析的域名或IP
-  port: 12345                                   #自定义的端口
-  uuid: 335ec5dd-61b1-4413-980e-5e009968f633    #自定义的uuid
-  network: grpc
-  tls: true
-  udp: true
-  flow:
-  client-fingerprint: chrome                    #自定义的浏览器指纹
-  servername: www.yahoo.com                     #自定义的第三方域名
-  grpc-opts:
-    grpc-service-name: "ygkkk"                  #" "内自定义的字符
-  reality-opts:
-    public-key: Aqp9oy2EFi4NNfRMZa3I3HdGhHbOIiSDZ8L28UCF73k    #自定义的public-key
-    short-id: 24410d1c                          #自定义的short-id
-
-#==============================（vless-xtls-rprx-vision节点）
-- name: vless-xtls-rprx-vision节点              #可自定义名称
-  type: vless
-  server: yg.ygkkk.eu.org                      #解析的域名
-  port: 12345                                  #自定义的端口
-  uuid: 5f74f86b-3ee8-44f4-adc4-6666be3d315    #自定义的uuid
-  network: tcp
-  tls: true
-  udp: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-
-#==============================（vless-ws-tls节点）
-- name: vless-ws-tls节点                           #可自定义名称
-  type: vless
-  server: yg.ygkkk.eu.org                          #解析的域名或者优选域名IP
-  port: 12345                                      #自定义的端口
-  uuid: 3cc9a51c-db76-4ad2-a76b-8cb993bddb73       #自定义的uuid
-  udp: true
-  tls: true
-  network: ws
-  servername: abc.ygkkk.eu.org                     #sni域名，与下面的host一致
-  ws-opts:
-    path: "/?ed=2048"                              #" "内自定义的path路径
-    headers:
-      Host: abc.ygkkk.eu.org                       #host域名，与上面的servername一致
-
-#==============================（vless-ws节点）
-- name: vless-ws                                   #可自定义名称
-  type: vless
-  server: shopify.com	                           #解析的域名或者优选域名IP
-  port: 443                                        #自定义的端口
-  uuid: 05ffbcfc-c831-4027-95b8-1c7a0b51f4ad       #自定义的uuid
-  udp: true
-  tls: true
-  network: ws
-  servername: qw.mlldxes.eu.org                    #sni域名，与下面的host一致
-  ws-opts:
-    path: "/argox-vl?ed=2048"                              #" "内自定义的path路径
-    headers:
-      Host: qw.mlldxes.eu.org                      #host域名，与上面的servername一致
-
-#==============================（vmess-ws-tls节点）
-- name: vmess-ws-tls节点                           #可自定义名称
-  type: vmess
-  server: yg.ygkkk.eu.org                          #解析的域名或者优选域名IP
-  port: 12345                                      #自定义的端口
-  uuid: 3cc9a51c-db76-4ad2-a76b-8cb993bddb73       #自定义的uuid
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: abc.ygkkk.eu.org                     #sni域名，与下面的host一致
-  ws-opts:
-    path: "/?ed=2048"                              #自定义的path路径
-    headers:
-      Host: abc.ygkkk.eu.org                       #host域名，与上面的servername一致
-
-#==============================（vmess-ws节点）
-- name: vmess-ws节点                               #可自定义名称
-  type: vmess
-  server: yg.ygkkk.eu.org                          #解析的域名或者优选域名IP
-  port: 8880                                       #自定义的端口
-  uuid: 77a571fb-4fd2-4b37-8596-1b7d9728bb5c       #自定义的uuid
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: abc.ygkkk.eu.org                     #sni域名，与下面的host一致
-  ws-opts:
-    path: "/?ed=2048"                              #" "内自定义的path路径
-    headers:
-      Host: abc.ygkkk.eu.org                       #host域名，与上面的servername一致
-
-#==============================（trojan-tcp-tls节点）
-- name: trojan-tcp-tls节点                         #可自定义名称
-  type: trojan
-  server: yg.ygkkk.eu.org                          #解析的域名
-  port: 12345                                      #自定义的端口
-  password: 123456789                              #自定义的密码
-  client-fingerprint: chrome
-  udp: true
-  sni: yg.ygkkk.eu.org                             #sni域名，与上面server地址一致
-  alpn:
-    - h2
-    - http/1.1
-  skip-cert-verify: false
-    
-#==============================（hysteria1证书节点）
-- name: hysteria1证书节点                            #可自定义名称
-  type: hysteria
-  server: yg.ygkkk.eu.org                          #解析的域名
-  port: 12345                                      #自定义的端口，多端口改为 ports:空格1000,2000-3000
-  auth-str: 123456                                 #自定义的密码
-  alpn:
-    - h3
-  protocol: udp                                    #自定义协议：udp/wechat-video/faketcp
-  up: 20                                           #自定义的上传限制
-  down: 100                                        #自定义的下载限制
-  sni: yg.ygkkk.eu.org                             #sni域名，与上面server地址一致  
-  skip-cert-verify: false
-  fast-open: true
-    
-#==============================（hysteria1自签节点）
-- name: hysteria1自签节点                           #可自定义名称
-  type: hysteria
-  server: 1.2.3.4                                  #服务器本地IP
-  port: 12345                                      #自定义的端口，多端口改为 ports:空格1000,2000-3000
-  auth-str: 123456                                 #自定义的密码
-  alpn:
-    - h3
-  protocol: udp                                    #自定义协议：udp/wechat-video/faketcp
-  up: 20                                           #自定义的上传限制
-  down: 100                                        #自定义的下载限制
-  sni: www.bing.com                                #自签证书                     
-  skip-cert-verify: true
-  fast-open: true
-
-#==============================（hysteria2证书节点）
-- name: hysteria2证书节点                            #可自定义名称
-  type: hysteria2 
-  server: yg.ygkkk.eu.org                            #解析的域名
-  port: 12345                                        #自定义的端口，不支持多端口
-  password: 123456                                   #自定义的密码
-  alpn:
-    - h3
-  sni: yg.ygkkk.eu.org                               #sni域名，与上面server地址一致 
-  skip-cert-verify: false
-  fast-open: true
-
-#==============================（hysteria2自签节点）
-- name: hysteria2自签节点                             #可自定义名称
-  type: hysteria2                                      
-  server: 1.2.3.4                                     #服务器本地IP
-  port: 12345                                         #自定义的端口，不支持多端口
-  password: 123456                                    #自定义的密码
-  alpn:
-    - h3
-  sni: www.bing.com                                    #自签证书
-  skip-cert-verify: true
-  fast-open: true
-    
-#==============================（tuic-V5证书节点）
-- name: tuic-V5证书节点                              #可自定义名称
-  server: yg.ygkkk.eu.org                          #解析的域名或IP
-  port: 12345                                      #自定义的端口
-  type: tuic
-  uuid: a806923b-737c-4581-8b13-56666f911866       #自定义的uuid
-  password: a806923b-737c-4581-8b13-56666f911866   #自定义的密码
-  alpn: [h3]
-  disable-sni: true
-  reduce-rtt: true
-  udp-relay-mode: native
-  congestion-controller: bbr
-  sni: yg.ygkkk.eu.org                            #sni域名，与上面server地址一致     
-  skip-cert-verify: false
-
-
-#==============================（tuic-V5自签节点）
-- name: tuic-V5自签节点                              #可自定义名称
-  server: 1.2.3.4                                   #服务器本地IP
-  port: 12345                                       #自定义的端口
-  type: tuic
-  uuid: a806923b-737c-4581-8b13-56666f911866       #自定义的uuid
-  password: a806923b-737c-4581-8b13-56666f911866   #自定义的密码
-  alpn: [h3]
-  disable-sni: true
-  reduce-rtt: true
-  udp-relay-mode: native
-  congestion-controller: bbr
-  sni: www.bing.com                                 #自签证书   
-  skip-cert-verify: true
   
-
-#==============================（warp-wireguard节点）  
-- name: warp-wireguard                                       #可自定义名称
+  
+- name: warp-b
   type: wireguard         
-  server: 162.159.192.169                                    #可自定义优选对端IP，与下面port的端口相对应
-  port: 2506                                                 #可自定义优选对端IP，与上面server的IP相对应
-  ip: 172.16.0.2/32
-  ipv6: 2606:4700:110:8b12:4e79:a350:1b1b:f6e5/128           #与private-key相对应，如删除本行，表示仅IPV4
-  public-key: OFWdULhLj+1t7JimGKh5ElWvry+TFh94wAoUmICwykU=
-  private-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=  #获取private-key，私key
+  server: 188.114.98.244
+  port: 987
+  ip: 172.16.0.2
+  ipv6: 2606:4700:110:85d4:3b1d:bd1a:d89f:1b0
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  private-key: wIKq9eXKAoPh8fa+2G5if9c0eBtnk/7OnKpIhExEHUk=
   udp: true
-  reserved: [248,158,77]
+  reserved: [162,191,130]
+  keepalive: 45 
+  mtu: 1280
+  
+  
+- name: warp-c
+  type: wireguard         
+  server: 188.114.98.244
+  port: 987
+  ip: 172.16.0.2
+  ipv6: 2606:4700:110:8e7e:89bb:10c8:b79a:84a7
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  private-key: OHDfrXkxtU17LbNuE7T19HeHOf63HIxBgzLelazPEWc=
+  udp: true
+  reserved: [177,17,153]
   keepalive: 45 
   mtu: 1280
 
-#==============================（warp-wireguard节点）  
-- name: warp-wireguard2                                       #可自定义名称
+
+
+- name: warp-d
   type: wireguard         
-  server: 162.159.192.169                                    #可自定义优选对端IP，与下面port的端口相对应
-  port: 2506                                                 #可自定义优选对端IP，与上面server的IP相对应
-  ip: 172.16.0.2/32
-  ipv6: 2606:4700:110:8645:e21a:396a:8e6a:a97a/128           #与private-key相对应，如删除本行，表示仅IPV4
-  public-key: uMETWk1LVJY+UcvGmbJLSWSEKTpfw0iONuWOLfEcVFQ=
-  private-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=  #获取private-key，私key
+  server: 188.114.98.244
+  port: 987
+  ip: 172.16.0.2
+  ipv6: 2606:4700:110:88eb:b5f9:effe:e67a:16b4
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  private-key: YK3hbnAwbiHTKjMPjpZZvYYBxSgE7f3ibgw7phpG4mo=
   udp: true
-  reserved: [181,245,42]
+  reserved: [200,183,98]
   keepalive: 45 
   mtu: 1280
 
 
 
-#（三区）==============================（代理分流）
-#分流组可自行创建添加，proxies参数下的name节点名称，按需求自行增减，确保出现的name节点名称在二区代理协议中可查找
+- name: warp-e
+  type: wireguard         
+  server: 188.114.98.244
+  port: 987
+  ip: 172.16.0.2
+  ipv6: 2606:4700:110:8125:45c7:7b24:b6f8:415a
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  private-key: EMeQfQLr03MKuP4ia3MeJPiURakXiAFQq+JxPdIalm0=
+  udp: true
+  reserved: [86,152,15]
+  keepalive: 45 
+  mtu: 1280
+  
+  
+  
+	  
 proxy-groups:
 - name: 负载均衡
   type: load-balance
@@ -287,9 +113,11 @@ proxy-groups:
   interval: 300
   strategy: round-robin
   proxies:
-    - warp-wireguard		                              #自定义添加协议的name字段
-    - warp-wireguard2
-    - vless-ws
+    - warp-a
+    - warp-b
+	- warp-c
+	- warp-d
+	- warp-e
 
 - name: 自动选择
   type: url-test
@@ -297,19 +125,23 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-    - warp-wireguard		                              #自定义添加协议的name字段
-    - warp-wireguard2
-    - vless-ws
+    - warp-a
+    - warp-b
+	- warp-c
+	- warp-d
+	- warp-e
     
 - name: 🌍选择代理节点
   type: select
   proxies:
-    - 负载均衡                                         #自定义添加协议的name字段
+    - 负载均衡
     - 自动选择
     - DIRECT
-    - warp-wireguard		                              #自定义添加协议的name字段
-    - warp-wireguard2
-    - vless-ws
+    - warp-a
+    - warp-b
+	- warp-c
+	- warp-d
+	- warp-e
 
 
 #（四区）==============================（代理规则）
@@ -318,3 +150,5 @@ rules:
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,🌍选择代理节点
+	  
+	  
