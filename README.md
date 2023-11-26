@@ -10,13 +10,14 @@ cloudflare邮箱：yuanwangokk@proton.me
 
 =====================================================
                                                                                     
-订阅链接    https://github.com/yuanwangokk/subscription/blob/main/share/frist.yaml
+订阅链接    https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/workers.yaml/raw?ref=main&private_token=glpat-B9KmTj97UrpLxuMxwy4U
 
-订阅链接    https://github.com/yuanwangokk/subscription/blob/main/share/sub.yaml
+订阅链接    https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/warp.yaml/raw?ref=main&private_token=glpat-B9KmTj97UrpLxuMxwy4U
 
-订阅链接    https://github.com/yuanwangokk/subscription/blob/main/share/warp.yaml
+订阅链接    https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/warps.yaml/raw?ref=main&private_token=glpat-B9KmTj97UrpLxuMxwy4U
 
-订阅链接   https://github.com/yuanwangokk/subscription/blob/main/share/singbox_android.json
+订阅链接    https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/singbox_android.json/raw?ref=main&private_token=glpat-B9KmTj97UrpLxuMxwy4U
+
 
 =====================================================
 
