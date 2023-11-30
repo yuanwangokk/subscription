@@ -10,13 +10,17 @@ cloudflare邮箱：yuanwangokk@proton.me
 
 =====================================================
                                                                                     
-订阅链接    https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/workers.yaml/raw?ref=main&private_token=glpat-B9KmTj97UrpLxuMxwy4U
+Clash meta 订阅链接：
 
-订阅链接    https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/warp.yaml/raw?ref=main&private_token=glpat-B9KmTj97UrpLxuMxwy4U
+https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/workers.yaml/raw?ref=main&private_token=glpat-z5xhR8TxoaagHZkEgT8i
 
-订阅链接    https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/warps.yaml/raw?ref=main&private_token=glpat-B9KmTj97UrpLxuMxwy4U
+https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/a.yaml/raw?ref=main&private_token=glpat-z5xhR8TxoaagHZkEgT8i
 
-订阅链接    https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/singbox_android.json/raw?ref=main&private_token=glpat-B9KmTj97UrpLxuMxwy4U
+Sing-box 订阅链接：
+
+https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/workers.json/raw?ref=main&private_token=glpat-z5xhR8TxoaagHZkEgT8i
+
+https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/a.json/raw?ref=main&private_token=glpat-z5xhR8TxoaagHZkEgT8i
 
 
 =====================================================
