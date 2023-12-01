@@ -2,7 +2,7 @@
 
 订阅面板转换链接：https://convert.yuanwangokk-b7c.workers.dev/
 
-Sing-box转换地址：https://sing-box-subscribe.vercel.app/config/<your worker domain>&file=2
+Sing-box转换地址：https://sing-box-subscribe.vercel.app/config/《链接》&file=2
 
 前端订阅面板：https://sub-web.netlify.app/
 
