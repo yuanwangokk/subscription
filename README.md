@@ -18,10 +18,13 @@ Clash meta 订阅链接：
 
 https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/a.yaml/raw?ref=main&private_token=glpat-z5xhR8TxoaagHZkEgT8i
 
-Sing-box 订阅链接：
+Sing-box-1.8.0 订阅链接：
 
-https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/a.json/raw?ref=main&private_token=glpat-z5xhR8TxoaagHZkEgT8i
+https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/a-1.8.json/raw?ref=main&private_token=glpat-z5xhR8TxoaagHZkEgT8i
+
+Sing-box-1.7.0 订阅链接：
+
+https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/a-1.7.json/raw?ref=main&private_token=glpat-z5xhR8TxoaagHZkEgT8i
 
 =====================================================
-
 aHR0cHM6Ly9hZ2l0LmFpL2JsdWUveW91bGluZ2thaXNoaS8=
