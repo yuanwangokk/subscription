@@ -1,0 +1,108 @@
+port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
+dns:
+  enable: true
+  listen: :53
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: 
+    - 223.5.5.5
+    - 8.8.8.8
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fallback:
+    - https://1.1.1.1/dns-query
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+      - 172.16.0.2/32
+      
+proxies:
+
+
+- name: vless-ws-tls-2
+  type: vless
+  server: shopify.com
+  port: 443
+  uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
+  udp: true
+  tls: true
+  network: ws
+  servername: ed.ariesver.online
+  ws-opts:
+    path: "/?ed=2048"
+    headers:
+      Host: ed.ariesver.online       
+
+- name: warp-1
+  type: wireguard         
+  server: 188.114.98.244
+  port: 987
+  ip: 172.16.0.2/32
+  ipv6: 2606:4700:110:86f7:4d4c:8ad2:7372:41b9/128
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  private-key: gOt0GSXgyRM89twzV2UE/hTDVBT/NWwZwq1Rx03KE3M=
+  udp: true
+  reserved: [174,236,8]
+  keepalive: 45 
+  mtu: 1280
+
+  
+  
+- name: warp-2
+  type: wireguard         
+  server: 188.114.98.244
+  port: 987
+  ip: 172.16.0.2/32
+  ipv6: 2606:4700:110:846a:1a0d:7c22:6aea:6fb1/128
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  private-key: yBqdZrWsTfbO1/oQAJklJO3ikWJKZ+s79UX8wdSf+0k=
+  udp: true
+  reserved: [60,80,230]
+  keepalive: 45 
+  mtu: 1280
+  
+ 
+proxy-groups:
+- name: 负载均衡
+  type: load-balance
+  url: https://cp.cloudflare.com/generate_204
+  interval: 300
+  strategy: round-robin
+  proxies:
+    - vless-ws-tls-2
+    - warp-1
+    - warp-2
+
+- name: 自动选择
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+    - warp-1
+    - warp-2
+    
+- name: 🌍选择代理节点
+  type: select
+  proxies:
+    - 负载均衡
+    - 自动选择
+    - DIRECT
+    - vless-ws-tls-2
+    - warp-1
+    - warp-2
+
+rules:
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,🌍选择代理节点
