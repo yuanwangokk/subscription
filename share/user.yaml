@@ -54,8 +54,8 @@ proxies:
   type: wireguard         
   server: 162.159.195.21
   port: 988
-  ip: 172.16.0.2
-  ipv6: 2606:4700:110:87e3:503c:ad24:7f73:679a
+  ip: 172.16.0.2/32
+  ipv6: 2606:4700:110:87e3:503c:ad24:7f73:679a/128
   public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
   private-key: qNfk5r7hXYWkFQAmlXocAdY0jCJQEC1DhQGx62q11UE=
   udp: true
