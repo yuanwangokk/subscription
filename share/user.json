@@ -294,7 +294,7 @@
     {
       "tag": "ed",
       "type": "vless",
-      "server": "icook.hk",
+      "server": "shopify.com",
       "server_port": 443,
       "uuid": "73b6dbd5-a27a-4c76-9ad1-42a82380dddb",
       "packet_encoding": "xudp",
@@ -316,7 +316,7 @@
     {
       "tag": "racknerd",
       "type": "vless",
-      "server": "icook.hk",
+      "server": "shopify.com",
       "server_port": 443,
       "uuid": "30e445a8-6a67-4e79-bc00-4e0e1afa7bbb",
       "packet_encoding": "xudp",
@@ -338,7 +338,7 @@
     {
       "tag": "debian",
       "type": "vless",
-      "server": "icook.hk",
+      "server": "shopify.com",
       "server_port": 443,
       "uuid": "05ffbcfc-c831-4027-95b8-1c7a0b51f4ad",
       "packet_encoding": "xudp",
