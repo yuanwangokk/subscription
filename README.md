@@ -33,4 +33,5 @@ https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/a-1.
 https://mirror.ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/share/a-1.7.json
 
 =====================================================
+
 aHR0cHM6Ly9hZ2l0LmFpL2JsdWUveW91bGluZ2thaXNoaS8=
