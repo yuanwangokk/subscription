@@ -31,8 +31,8 @@ proxies:
 
 - name: vless-ws-tls-2
   type: vless
-  server: shopify.com
-  port: 443
+  server: icook.hk
+  port: 8443
   uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
   udp: true
   tls: true
