@@ -25,15 +25,15 @@ proxies:
   type: vless
   server: 23.227.38.33
   port: 443
-  uuid: 30e445a8-6a67-4e79-bc00-4e0e1afa7bbb
+  uuid: 7167aab9-919a-4756-a6f6-048288625105
   udp: true
   tls: true
   network: ws
-  servername: as.mlldxes.eu.org
+  servername: letters-gamespot-steel-bool.trycloudflare.com
   ws-opts:
     path: "/argox-vl?ed=2048"
     headers:
-      Host: as.mlldxes.eu.org
+      Host: letters-gamespot-steel-bool.trycloudflare.com
 
 - name: debian
   type: vless
@@ -43,11 +43,11 @@ proxies:
   udp: true
   tls: true
   network: ws
-  servername: qw.mlldxes.eu.org
+  servername: strategies-ban-whether-reflects.trycloudflare.com
   ws-opts:
     path: "/argox-vl?ed=2048"
     headers:
-      Host: qw.mlldxes.eu.org
+      Host: strategies-ban-whether-reflects.trycloudflare.com
 
 
 - name: warp
