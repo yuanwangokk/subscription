@@ -23,31 +23,31 @@ proxies:
 
 - name: racknerd
   type: vless
-  server: 23.227.38.33
+  server: www.who.int
   port: 443
   uuid: 7167aab9-919a-4756-a6f6-048288625105
   udp: true
   tls: true
   network: ws
-  servername: letters-gamespot-steel-bool.trycloudflare.com
+  servername: mrna-reports-robert-displays.trycloudflare.com
   ws-opts:
     path: "/argox-vl?ed=2048"
     headers:
-      Host: letters-gamespot-steel-bool.trycloudflare.com
+      Host: mrna-reports-robert-displays.trycloudflare.com
 
 - name: debian
   type: vless
-  server: 23.227.38.33
+  server: www.who.int
   port: 443
   uuid: 05ffbcfc-c831-4027-95b8-1c7a0b51f4ad
   udp: true
   tls: true
   network: ws
-  servername: strategies-ban-whether-reflects.trycloudflare.com
+  servername: engineers-pty-speaks-dvds.trycloudflare.com
   ws-opts:
     path: "/argox-vl?ed=2048"
     headers:
-      Host: strategies-ban-whether-reflects.trycloudflare.com
+      Host: engineers-pty-speaks-dvds.trycloudflare.com
 
 
 - name: warp
