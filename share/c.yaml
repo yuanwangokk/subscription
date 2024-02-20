@@ -15,7 +15,7 @@ dns:
     fallback: ['https://dns.alidns.com/dns-query', 'https://dns.cloudflare.com/dns-query', 'tls://8.8.4.4:853']
     fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxies:
-    - {name: "A", server: ip.skk.moe, port: 8443, client-fingerprint: random, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, tls: true, tfo: false, skip-cert-verify: true, servername: worker.ariesver.online, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: worker.ariesver.online}}, udp: true}    
+    - {name: "A", server: 47.76.80.72, port: 2053, client-fingerprint: random, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, tls: true, tfo: false, skip-cert-verify: true, servername: worker.ariesver.online, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: worker.ariesver.online}}, udp: true}    
     # Domain
 proxy-providers: {WARP: {type: http, path: ./warp.yaml, url: 'https://neko-warp.nloli.xyz/neko_warp.yaml', interval: 3600, health-check: {enable: true, url: 'https://www.gstatic.com/generate_204', interval: 300}}}
 proxy-groups:
