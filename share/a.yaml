@@ -29,6 +29,20 @@ proxies:
     path: "/?ed=2048"
     headers:
       Host: worker.ariesver.online   
+      
+- name: vless-ws-tls-3
+  type: vless
+  server: ip.skk.moe
+  port: 8443
+  uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
+  udp: true
+  tls: true
+  network: ws
+  servername: worker.ariesver.online
+  ws-opts:
+    path: "/?ed=2048"
+    headers:
+      Host: worker.ariesver.online         
 
 - name: warp-1
   type: wireguard         
@@ -58,7 +72,7 @@ proxies:
   
 proxy-providers: {WARP: {type: http, path: ./warp.yaml, url: 'https://neko-warp.nloli.xyz/neko_warp.yaml', interval: 3600, health-check: {enable: true, url: 'https://www.gstatic.com/generate_204', interval: 300}}}
 proxy-groups:
-    - { name: PROXY, type: select, proxies: [vless-ws-tls-2], use: [WARP] }
+    - { name: PROXY, type: select, proxies: [vless-ws-tls-2, vless-ws-tls-3], use: [] }
 rule-providers:
     reject: { type: http, behavior: domain, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt', path: ./ruleset/reject.yaml, interval: 86400 }
     icloud: { type: http, behavior: domain, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt', path: ./ruleset/icloud.yaml, interval: 86400 }
