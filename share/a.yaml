@@ -1,34 +1,21 @@
-port: 7890
-allow-lan: true
+mixed-port: 7890
+allow-lan: false
+bind-address: '*'
 mode: rule
 log-level: info
-unified-delay: true
-global-client-fingerprint: chrome
+external-controller: '127.0.0.1:9090'
 dns:
-  enable: true
-  listen: :53
-  ipv6: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  default-nameserver: 
-    - 223.5.5.5
-    - 8.8.8.8
-  nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
-  fallback:
-    - https://1.1.1.1/dns-query
-    - tls://dns.google
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
-      - 172.16.0.2/32
-      
+    enable: true
+    ipv6: false
+    default-nameserver: [223.5.5.5, 223.6.6.6]
+    enhanced-mode: fake-ip
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+    nameserver: ['https://dns.alidns.com/dns-query']
+    fallback: ['https://dns.alidns.com/dns-query', 'https://dns.cloudflare.com/dns-query', 'tls://8.8.4.4:853']
+    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
+
 proxies:
-
-
 - name: vless-ws-tls-2
   type: vless
   server: icook.hk
@@ -37,11 +24,11 @@ proxies:
   udp: true
   tls: true
   network: ws
-  servername: ed.ariesver.online
+  servername: worker.ariesver.online
   ws-opts:
     path: "/?ed=2048"
     headers:
-      Host: ed.ariesver.online       
+      Host: worker.ariesver.online   
 
 - name: warp-1
   type: wireguard         
@@ -56,8 +43,6 @@ proxies:
   keepalive: 45 
   mtu: 1280
 
-  
-  
 - name: warp-2
   type: wireguard         
   server: 188.114.98.244
@@ -71,38 +56,31 @@ proxies:
   keepalive: 45 
   mtu: 1280
   
- 
+proxy-providers: {WARP: {type: http, path: ./warp.yaml, url: 'https://neko-warp.nloli.xyz/neko_warp.yaml', interval: 3600, health-check: {enable: true, url: 'https://www.gstatic.com/generate_204', interval: 300}}}
 proxy-groups:
-- name: 负载均衡
-  type: load-balance
-  url: https://cp.cloudflare.com/generate_204
-  interval: 300
-  strategy: round-robin
-  proxies:
-    - vless-ws-tls-2
-    - warp-1
-    - warp-2
-
-- name: 自动选择
-  type: url-test
-  url: https://cp.cloudflare.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-    - warp-1
-    - warp-2
-    
-- name: 🌍选择代理节点
-  type: select
-  proxies:
-    - 负载均衡
-    - 自动选择
-    - DIRECT
-    - vless-ws-tls-2
-    - warp-1
-    - warp-2
-
+    - { name: PROXY, type: select, proxies: [vless-ws-tls-2, warp-1, warp-2], use: [WARP] }
+rule-providers:
+    reject: { type: http, behavior: domain, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt', path: ./ruleset/reject.yaml, interval: 86400 }
+    icloud: { type: http, behavior: domain, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt', path: ./ruleset/icloud.yaml, interval: 86400 }
+    apple: { type: http, behavior: domain, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt', path: ./ruleset/apple.yaml, interval: 86400 }
+    proxy: { type: http, behavior: domain, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt', path: ./ruleset/proxy.yaml, interval: 86400 }
+    direct: { type: http, behavior: domain, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt', path: ./ruleset/direct.yaml, interval: 86400 }
+    private: { type: http, behavior: domain, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt', path: ./ruleset/private.yaml, interval: 86400 }
+    telegramcidr: { type: http, behavior: ipcidr, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt', path: ./ruleset/telegramcidr.yaml, interval: 86400 }
+    cncidr: { type: http, behavior: ipcidr, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt', path: ./ruleset/cncidr.yaml, interval: 86400 }
+    lancidr: { type: http, behavior: ipcidr, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt', path: ./ruleset/lancidr.yaml, interval: 86400 }
+    applications: { type: http, behavior: classical, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt', path: ./ruleset/applications.yaml, interval: 86400 }
 rules:
-  - GEOIP,LAN,DIRECT
-  - GEOIP,CN,DIRECT
-  - MATCH,🌍选择代理节点
+    - 'RULE-SET,applications,DIRECT'
+    - 'RULE-SET,private,DIRECT'
+    - 'RULE-SET,reject,REJECT'
+    - 'RULE-SET,icloud,DIRECT'
+    - 'RULE-SET,apple,DIRECT'
+    - 'RULE-SET,proxy,PROXY'
+    - 'RULE-SET,direct,DIRECT'
+    - 'RULE-SET,lancidr,DIRECT'
+    - 'RULE-SET,cncidr,DIRECT'
+    - 'RULE-SET,telegramcidr,PROXY'
+    - 'GEOIP,LAN,DIRECT'
+    - 'GEOIP,CN,DIRECT'
+    - 'MATCH,PROXY'
