@@ -56,8 +56,36 @@ proxies:
   ws-opts:
     path: "/?ed=2048"
     headers:
-      Host: worker.ariesver.online         
+      Host: worker.ariesver.online  
 
+       
+- name: vless-ws-tls-5
+  type: vless
+  server: 45.66.131.98
+  port: 2004
+  uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
+  udp: true
+  tls: true
+  network: ws
+  servername: ed-1ii.pages.dev
+  ws-opts:
+    path: "/?ed=2048"
+    headers:
+      Host: ed-1ii.pages.dev         
+
+- name: vless-ws-tls-6
+  type: vless
+  server: 45.66.131.98
+  port: 2004
+  uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
+  udp: true
+  tls: true
+  network: ws
+  servername: ed.haohan1.eu.org
+  ws-opts:
+    path: "/?ed=2048"
+    headers:
+      Host: ed.haohan1.eu.org         
 
 - name: warp-1
   type: wireguard         
@@ -87,7 +115,7 @@ proxies:
   
 proxy-providers: {WARP: {type: http, path: ./warp.yaml, url: 'https://neko-warp.nloli.xyz/neko_warp.yaml', interval: 3600, health-check: {enable: true, url: 'https://www.gstatic.com/generate_204', interval: 300}}}
 proxy-groups:
-    - { name: PROXY, type: select, proxies: [vless-ws-tls-2, vless-ws-tls-3, vless-ws-tls-4], use: [] }
+    - { name: PROXY, type: select, proxies: [vless-ws-tls-2, vless-ws-tls-3, vless-ws-tls-4, vless-ws-tls-5, vless-ws-tls-6], use: [] }
 rule-providers:
     reject: { type: http, behavior: domain, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt', path: ./ruleset/reject.yaml, interval: 86400 }
     icloud: { type: http, behavior: domain, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt', path: ./ruleset/icloud.yaml, interval: 86400 }
