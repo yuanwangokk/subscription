@@ -49,7 +49,7 @@ proxies:
 - name: vless-ws-tls-4
   type: vless
   server: c.xf.free.hr
-  port: 80
+  port: 2096
   uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
   udp: true
   tls: true
