@@ -46,8 +46,8 @@ proxies:
         
 - name: vless-ws-tls-4
   type: vless
-  server: 110.72.99.106
-  port: 49001
+  server: 8.218.3.12
+  port: 2053
   uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
   udp: true
   tls: true
@@ -61,8 +61,8 @@ proxies:
        
 - name: vless-ws-tls-5
   type: vless
-  server: 110.72.99.106
-  port: 49001
+  server: 8.218.3.12
+  port: 2053
   uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
   udp: true
   tls: true
@@ -75,8 +75,8 @@ proxies:
 
 - name: vless-ws-tls-6
   type: vless
-  server: 110.72.99.106
-  port: 49001
+  server: 8.218.3.12
+  port: 2053
   uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
   udp: true
   tls: true
