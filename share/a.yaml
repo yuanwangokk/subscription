@@ -46,8 +46,8 @@ proxies:
         
 - name: vless-ws-tls-4
   type: vless
-  server: icook.tw
-  port: 8443
+  server: 8.217.167.88
+  port: 2053
   uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
   udp: true
   tls: true
@@ -61,8 +61,8 @@ proxies:
        
 - name: vless-ws-tls-5
   type: vless
-  server: icook.tw
-  port: 8443
+  server: 8.217.167.88
+  port: 2053
   uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
   udp: true
   tls: true
@@ -75,8 +75,8 @@ proxies:
 
 - name: vless-ws-tls-6
   type: vless
-  server: icook.tw
-  port: 8443
+  server: 8.217.167.88
+  port: 2053
   uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
   udp: true
   tls: true
