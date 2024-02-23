@@ -54,7 +54,7 @@ proxies:
   udp: true
   tls: true
   network: ws
-  servername: ed-1ii.pages.dev
+  servername: 47.242.176.237
   ws-opts:
     path: "/?ed=2048"
     headers:
