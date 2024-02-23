@@ -46,8 +46,8 @@ proxies:
         
 - name: vless-ws-tls-4
   type: vless
-  server: 47.242.176.237
-  port: 443
+  server: icook.hk
+  port: 8443
   uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
   udp: true
   tls: true
