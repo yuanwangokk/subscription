@@ -48,13 +48,13 @@ proxies:
        
 - name: vless-ws-tls-4
   type: vless
-  server: cdn.shanggan.pp.ua
+  server: 47.242.176.237
   port: 443
   uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb
   udp: true
   tls: true
   network: ws
-  servername: 47.242.176.237
+  servername: ed-1ii.pages.dev
   ws-opts:
     path: "/?ed=2048"
     headers:
