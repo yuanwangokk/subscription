@@ -16,6 +16,9 @@ https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/b.ya
 
 https://mirror.ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/share/b.yaml
 
+SingBox 订阅链接：
+
+https://mirror.ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/share/a-1.8.json
 
 =====================================================
 
