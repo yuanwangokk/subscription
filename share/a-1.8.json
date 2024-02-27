@@ -106,7 +106,11 @@
         "auto",
         "direct",
         "A",
-        "B"
+        "B",
+        "☁️ CFWarp-A",
+        "☁️ CFWarp-B",
+        "☁️ CFWarp-C",
+        "☁️ CFWarp-D"
       ]
     },
     {
@@ -361,6 +365,10 @@
       "outbounds": [
         "A",
         "B",
+        "☁️ CFWarp-A",
+        "☁️ CFWarp-B",
+        "☁️ CFWarp-C",
+        "☁️ CFWarp-D",
         "proxy"
       ]
     },
@@ -369,7 +377,11 @@
       "type": "urltest",
       "outbounds": [
         "A",
-        "B"
+        "B",
+        "☁️ CFWarp-A",
+        "☁️ CFWarp-B",
+        "☁️ CFWarp-C",
+        "☁️ CFWarp-D"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -438,6 +450,50 @@
         "early_data_header_name": "Sec-WebSocket-Protocol",
         "max_early_data": 2048
       }
+    },
+    {
+      "tag": "☁️ CFWarp-A",
+      "type": "wireguard",
+      "server": "162.159.192.128",
+      "server_port": 1010,
+      "private_key": "4Oz80bIljm6+3stx5SkEeGpDVY+Z/nMj+CK1APOKdVE=",
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "local_address": [
+        "172.16.0.2/32"
+      ]
+    },
+    {
+      "tag": "☁️ CFWarp-B",
+      "type": "wireguard",
+      "server": "162.159.192.247",
+      "server_port": 1010,
+      "private_key": "4Oz80bIljm6+3stx5SkEeGpDVY+Z/nMj+CK1APOKdVE=",
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "local_address": [
+        "172.16.0.2/32"
+      ]
+    },
+    {
+      "tag": "☁️ CFWarp-C",
+      "type": "wireguard",
+      "server": "188.114.99.28",
+      "server_port": 854,
+      "private_key": "4Oz80bIljm6+3stx5SkEeGpDVY+Z/nMj+CK1APOKdVE=",
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "local_address": [
+        "172.16.0.2/32"
+      ]
+    },
+    {
+      "tag": "☁️ CFWarp-D",
+      "type": "wireguard",
+      "server": "188.114.96.140",
+      "server_port": 1010,
+      "private_key": "SHVqHEGI7k2+OQ/oWMmWY2EQObbRQjRBdDPimh0h1WY=",
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "local_address": [
+        "172.16.0.2/32"
+      ]
     }
   ],
   "route": {
