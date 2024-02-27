@@ -7,7 +7,7 @@ external-controller: '127.0.0.1:9090'
 dns:
     enable: true
     ipv6: false
-    default-nameserver: [223.5.5.5, 223.6.6.6]
+    default-nameserver: [223.5.5.5, 119.29.29.29]
     enhanced-mode: fake-ip
     fake-ip-range: 198.18.0.1/16
     use-hosts: true
@@ -15,14 +15,15 @@ dns:
     fallback: ['https://dns.alidns.com/dns-query', 'https://dns.cloudflare.com/dns-query', 'tls://8.8.4.4:853']
     fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxies:
-    - {name: A, server: ip.sb, port: 8443, client-fingerprint: random, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, tls: true, tfo: false, skip-cert-verify: true, servername: worker.ariesver.online, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: worker.ariesver.online}}, udp: true}
-    - {name: B, server: ip.sb, port: 8443, client-fingerprint: random, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, tls: true, tfo: false, skip-cert-verify: true, servername: ed-1ii.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: ed-1ii.pages.dev}}, udp: true}  
+    - {name: A, server: ip.sb, port: 8443 client-fingerprint: random, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, tls: true, tfo: false, skip-cert-verify: true, servername: worker.ariesver.online, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: worker.ariesver.online}}, udp: true}
+    - {name: B, server: ip.sb, port: 8443 client-fingerprint: random, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, tls: true, tfo: false, skip-cert-verify: true, servername: ed-1ii.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: ed-1ii.pages.dev}}, udp: true}
+    
     # Domain
     #- {name: "TG Channel: @cf_no1" , type: vless, server: vless.cfno1.eu.org, port: 443, uuid: de44b044-8f90-4e18-b742-16591667ff96, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: vless.cfno1.eu.org}}, udp: false}
     #- {name: Cloudflare-Anycast, type: vless, server: edgetunnel-free.pages.dev, port: 443, uuid: de44b044-8f90-4e18-b742-16591667ff96, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: edgetunnel-free.pages.dev}}, udp: false}
-proxy-providers:  {WARP: {type: http, path: ./warp.yaml, url: 'https://sub.xijingping.gay/api/sub?host=worker.ariesver.online&uuid=73b6dbd5-a27a-4c76-9ad1-42a82380dddb&path=/?ed=2048&format=clash_warp.yaml', interval: 3600, health-check: {enable: true, url: 'https://www.gstatic.com/generate_204', interval: 300}}}
+proxy-providers: {WARP: {type: https, path: ./warp.yaml, url: 'https://neko-warp.nloli.xyz/neko_warp.yaml', interval: 3600, health-check: {enable: true, url: 'https://www.gstatic.com/generate_204', interval: 300}}}
 proxy-groups:
-    - { name: PROXY, type: select, proxies: [A, B], use: [WARP] }
+    - { name: PROXY, type: select, proxies: [A], use: [WARP] }
 rule-providers:
     reject: { type: http, behavior: domain, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt', path: ./ruleset/reject.yaml, interval: 86400 }
     icloud: { type: http, behavior: domain, url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt', path: ./ruleset/icloud.yaml, interval: 86400 }
