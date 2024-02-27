@@ -31,7 +31,7 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-	  
+
   W:
     type: http
     url: "https://neko-warp.nloli.xyz/neko_warp.yaml"
@@ -41,6 +41,7 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
+      
 proxy-groups:
     - { name: PROXY, type: select, proxies: [A, B], use: [WARP, W] }
 rule-providers:
