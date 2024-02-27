@@ -17,10 +17,9 @@ dns:
 proxies:
     - {name: A, server: ip.sb, port: 8443 client-fingerprint: random, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, tls: true, tfo: false, skip-cert-verify: true, servername: worker.ariesver.online, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: worker.ariesver.online}}, udp: true}
     - {name: B, server: ip.sb, port: 8443 client-fingerprint: random, type: vless, uuid: 73b6dbd5-a27a-4c76-9ad1-42a82380dddb, tls: true, tfo: false, skip-cert-verify: true, servername: ed-1ii.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: ed-1ii.pages.dev}}, udp: true}
-    
     # Domain
-    #- {name: "TG Channel: @cf_no1" , type: vless, server: vless.cfno1.eu.org, port: 443, uuid: de44b044-8f90-4e18-b742-16591667ff96, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: vless.cfno1.eu.org}}, udp: false}
-    #- {name: Cloudflare-Anycast, type: vless, server: edgetunnel-free.pages.dev, port: 443, uuid: de44b044-8f90-4e18-b742-16591667ff96, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: edgetunnel-free.pages.dev}}, udp: false}
+    - {name: "TG Channel: @cf_no1" , type: vless, server: vless.cfno1.eu.org, port: 443, uuid: de44b044-8f90-4e18-b742-16591667ff96, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: vless.cfno1.eu.org}}, udp: false}
+    - {name: Cloudflare-Anycast, type: vless, server: edgetunnel-free.pages.dev, port: 443, uuid: de44b044-8f90-4e18-b742-16591667ff96, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: edgetunnel-free.pages.dev}}, udp: false}
 proxy-providers: {WARP: {type: https, path: ./warp.yaml, url: 'https://neko-warp.nloli.xyz/neko_warp.yaml', interval: 3600, health-check: {enable: true, url: 'https://www.gstatic.com/generate_204', interval: 300}}}
 proxy-groups:
     - { name: PROXY, type: select, proxies: [A, B], use: [WARP] }
