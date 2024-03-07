@@ -36,8 +36,6 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-      
-
   S:
     type: http
     url: "http://allsub.king361.cf"
@@ -47,6 +45,7 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
+
 proxy-groups:
     - { name: PROXY, type: select, proxies: [A, B], use: [WARP, W, S] }
 rule-providers:
