@@ -9,17 +9,16 @@
 cloudflare邮箱：yuanwangokk@proton.me
 
 =====================================================
-                                                                                    
+
 Clash meta 订阅链接：
 
-https://gitlab.com/api/v4/projects/yuanwangokk%2Fclashmeta/repository/files/b.yaml/raw?ref=main&private_token=glpat-z5xhR8TxoaagHZkEgT8i
+https://igdux.top/smRY
 
-https://mirror.ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/share/b.yaml
+https://auto.classelivre.eu.org/sub?host=arise-dtc.pages.dev&uuid=bb5e4571-9c41-44db-b67f-0d764378e2be&path=/arise?ed=2048
 
 SingBox 订阅链接：
 
-https://mirror.ghproxy.com/https://github.com/yuanwangokk/subscription/blob/main/share/a-1.8.json
+https://igdux.top/wb7F
 
 =====================================================
 
-aHR0cHM6Ly9hZ2l0LmFpL2JsdWUveW91bGluZ2thaXNoaS8=
